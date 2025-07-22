@@ -1,43 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
- <!-- Navigation -->
-<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #c6d319;">
-  <div class="container">
-    <a class="navbar-brand" href="index.html">
-      <img src="images/logo.jpeg" alt="Logo" class="logo" style="width: 40px; height: 40px; margin-right: 10px;">
-      <span style="color: #ff5100;">RidTech</span><span style="color: #3128a7; margin-left: 5px;">Solution</span>
-    </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="service.html">Service</a></li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="industryDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Industry
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="industryDropdown">
-            <li><a class="dropdown-item" href="#">Electronics</a></li>
-            <li><a class="dropdown-item" href="#">Information Technology</a></li>
-            <li><a class="dropdown-item" href="#">Automotive Industry</a></li>
-            <li><a class="dropdown-item" href="#">Pharma Industry</a></li>
-            <li><a class="dropdown-item" href="#">Mechanical Industry</a></li>
-          </ul>
-        </li>
-        <li class="nav-item"><a class="nav-link" href="index.html#products">Product</a></li>
-        <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
-        <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
-        <li class="nav-item"><a class="nav-link active" href="career.html">Careers</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
-
-  
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Careers at RidTech</title>
@@ -46,6 +9,22 @@
     body {
       background-color: #f9f9f9;
     }
+
+    .navbar {
+      background-color: #c6d319;
+    }
+
+    .navbar-brand .logo {
+      width: 40px;
+      height: 40px;
+      margin-right: 10px;
+    }
+
+    .navbar-nav .nav-link {
+      color: black !important;
+      font-weight: 500;
+    }
+
     .job-card {
       border: 1px solid #dee2e6;
       border-radius: 12px;
@@ -54,24 +33,71 @@
       background-color: #fff;
       box-shadow: 0 3px 8px rgba(0,0,0,0.05);
     }
+
     .job-card h4 {
       color: #0056b3;
     }
+
     .apply-btn {
       background-color: #ff6600;
       color: white;
       border: none;
     }
+
+    .ridtech {
+      color: #ff5100;
+    }
+
+    .solution {
+      color: #3128a7;
+      margin-left: 5px;
+    }
   </style>
 </head>
 <body>
 
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="images/logo.jpeg" alt="Logo" class="logo">
+        <span class="ridtech">RidTech</span><span class="solution">Solution</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="service.html">Service</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="industryDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Industry
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="industryDropdown">
+              <li><a class="dropdown-item" href="#">Electronics</a></li>
+              <li><a class="dropdown-item" href="#">Information Technology</a></li>
+              <li><a class="dropdown-item" href="#">Automotive Industry</a></li>
+              <li><a class="dropdown-item" href="#">Pharma Industry</a></li>
+              <li><a class="dropdown-item" href="#">Mechanical Industry</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="index.html#products">Product</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+          <li class="nav-item"><a class="nav-link active" href="career.html">Careers</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Career Section -->
   <div class="container py-5">
     <h2 class="text-center mb-4">Join Our Team at RidTech</h2>
 
     <!-- Job 1 -->
     <div class="job-card">
-      <h4>Software Developer(Intern)</h4>
+      <h4>Software Developer (Intern)</h4>
       <p><strong>Location:</strong> Pune</p>
       <p><strong>Description:</strong> Work with Node.js, React, and MySQL to develop modern web solutions.</p>
       <p><strong>Experience:</strong> 0-1 years</p>
@@ -80,7 +106,7 @@
 
     <!-- Job 2 -->
     <div class="job-card">
-      <h4>Automation Engineer(Intern)</h4>
+      <h4>Automation Engineer (Intern)</h4>
       <p><strong>Location:</strong> Pune</p>
       <p><strong>Description:</strong> Experience with PLCs, SCADA, HMI. Preferred knowledge of Siemens and ABB.</p>
       <p><strong>Experience:</strong> 0-2 years</p>
@@ -97,5 +123,7 @@
     </div>
   </div>
 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
