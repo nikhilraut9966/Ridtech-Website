@@ -15,25 +15,66 @@
      scroll-behavior: smooth;
    }
 
-   .navbar {
-     background-color: #c6d319;
-   }
+/* Navbar Base */
+.navbar {
+  background: linear-gradient(90deg, #c6d319, #ff5100); /* gradient background */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* subtle shadow */
+  transition: all 0.3s ease;
+}
 
-   .navbar-nav .nav-link {
-     color: black !important;
-     font-weight: 500;
-   }
+/* Brand */
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.3rem;
+  color: #fff !important;
+}
 
-   .navbar-brand {
-     display: flex;
-     align-items: center;
-   }
+.navbar-brand .logo {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  margin-right: 10px;
+}
 
-   .navbar-brand .logo {
-     width: 40px;
-     height: 40px;
-     margin-right: 10px;
-   }
+/* Navbar Links */
+.navbar-nav .nav-link {
+  color: #fff !important;
+  font-weight: 500;
+  padding: 6px 14px;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+  background: rgba(255,255,255,0.3);
+  color: #222 !important;
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  padding: 10px 0;
+}
+
+.dropdown-menu .dropdown-item {
+  font-weight: 500;
+  padding: 8px 20px;
+  color: #333;
+  transition: all 0.2s ease;
+}
+
+.dropdown-menu .dropdown-item:hover {
+  background: linear-gradient(90deg, #ff5100, #c6d319);
+  color: #fff;
+  border-radius: 6px;
+}
+
 
    .ridtech { color: #ff5100; }
 
@@ -289,37 +330,49 @@
   <div class="main-bg">
 
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
-      <div class="container">
-        <a class="navbar-brand" href="#">
-          <img src="images/logo.jpeg" alt="Logo" class="logo">
-          <span class="ridtech">RidTech</span><span class="solution">Solution</span>
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="service.html">Service</a></li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="industryDropdown" role="button" data-bs-toggle="dropdown">Industry</a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Electronics</a></li>
-                <li><a class="dropdown-item" href="#">Information Technology</a></li>
-                <li><a class="dropdown-item" href="#">Automotive Industry</a></li>
-                <li><a class="dropdown-item" href="#">Pharma Industry</a></li>
-                <li><a class="dropdown-item" href="#">Mechanical Industry</a></li>
-              </ul>
-            </li>
-            <li class="nav-item"><a class="nav-link" href="#products">Product</a></li>
-            <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
-            <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
-            <li class="nav-item"><a class="nav-link" href="career.html">Careers</a></li>
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top shadow-sm" style="background: linear-gradient(90deg, #c6d319, #ff5100);">
+  <div class="container">
+    <!-- Logo & Brand -->
+    <a class="navbar-brand fw-bold d-flex align-items-center" href="#">
+      <img src="images/logo.jpeg" alt="Logo" class="logo" style="border-radius:50%; border:2px solid white; width:45px; height:45px; margin-right:10px;">
+      <span style="color:#fff; font-size:1.3rem;">Rid<span style="color:#222;">Tech</span></span> 
+      <span style="color:#fff; margin-left:4px;">Solution</span>
+    </a>
+
+    <!-- Mobile Toggle -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Navbar Links -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto align-items-center">
+        <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="service.html">Service</a></li>
+
+        <!-- Dropdown -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="industryDropdown" role="button" data-bs-toggle="dropdown">
+            Industry
+          </a>
+          <ul class="dropdown-menu shadow border-0 rounded-3">
+            <li><a class="dropdown-item" href="#">Electronics</a></li>
+            <li><a class="dropdown-item" href="#">Information Technology</a></li>
+            <li><a class="dropdown-item" href="#">Automotive Industry</a></li>
+            <li><a class="dropdown-item" href="#">Pharma Industry</a></li>
+            <li><a class="dropdown-item" href="#">Mechanical Industry</a></li>
           </ul>
-        </div>
-      </div>
-    </nav>
+        </li>
+
+        <li class="nav-item"><a class="nav-link" href="#products">Product</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+        <li class="nav-item"><a class="nav-link btn btn-light text-dark px-3 py-1 ms-2 rounded-pill fw-semibold" href="career.html">Careers</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
 
     
 <!-- Hero Section with Text Overlay -->
