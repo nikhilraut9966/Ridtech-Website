@@ -10,6 +10,7 @@
       background-color: #f9f9f9;
     }
 
+    /* Navbar */
     .navbar {
       background-color: #fff;
       border: 1px solid #dee2e6;
@@ -28,34 +29,28 @@
       font-weight: 500;
     }
 
-    .job-card {
+    /* Section Style (matching About Us) */
+    .section-box {
       border: 1px solid #dee2e6;
       border-radius: 12px;
-      padding: 25px;
-      margin-bottom: 20px;
       background-color: #fff;
+      padding: 40px;
+      margin-top: 30px;
+      margin-bottom: 30px;
       box-shadow: 0 3px 8px rgba(0,0,0,0.05);
     }
 
-    .job-card h4 {
+    .section-box h1, 
+    .section-box h4 {
       color: #0056b3;
     }
 
-    .apply-btn {
-      background-color: #ff6600;
-      color: white;
-      border: none;
+    .section-box p {
+      font-size: 16px;
+      color: #333;
     }
 
-    .ridtech {
-      color: #ff5100;
-    }
-
-    .solution {
-      color: #3128a7;
-      margin-left: 5px;
-    }
-
+    /* Footer */
     footer {
       background-color: #fff;
       border: 1px solid #dee2e6;
@@ -77,6 +72,15 @@
     footer a:hover {
       text-decoration: underline;
     }
+
+    .ridtech {
+      color: #ff5100;
+    }
+
+    .solution {
+      color: #3128a7;
+      margin-left: 5px;
+    }
   </style>
 </head>
 <body>
@@ -95,7 +99,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="service.html">Service</a></li>
+            <li class="nav-item"><a class="nav-link active" href="service.html">Service</a></li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="industryDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Industry
@@ -111,44 +115,45 @@
             <li class="nav-item"><a class="nav-link" href="index.html#products">Product</a></li>
             <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
             <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
-            <li class="nav-item"><a class="nav-link active" href="career.html">Careers</a></li>
+            <li class="nav-item"><a class="nav-link" href="career.html">Careers</a></li>
           </ul>
         </div>
       </div>
     </nav>
   </div>
 
-  <!-- Services -->
-  <div class="container py-5">
-    <h1 class="text-center mb-4">Our Services</h1>
-    
-    <div class="row">
-      <div class="col-md-4">
-        <h4>Industrial Automation</h4>
-        <p>We provide complete automation solutions using PLC, SCADA, and HMI systems for various industries.</p>
+  <!-- Services Section -->
+  <div class="container">
+    <div class="section-box">
+      <h1 class="text-center mb-4">Our Services</h1>
+      <div class="row">
+        <div class="col-md-4">
+          <h4>Industrial Automation</h4>
+          <p>We provide complete automation solutions using PLC, SCADA, and HMI systems for various industries.</p>
+        </div>
+        <div class="col-md-4">
+          <h4>IIoT Integration</h4>
+          <p>Connect your industrial devices to the cloud for real-time monitoring and predictive maintenance.</p>
+        </div>
+        <div class="col-md-4">
+          <h4>Custom Software Development</h4>
+          <p>We design tailor-made software for process control, data logging, and dashboard reporting.</p>
+        </div>
       </div>
-      <div class="col-md-4">
-        <h4>IIoT Integration</h4>
-        <p>Connect your industrial devices to the cloud for real-time monitoring and predictive maintenance.</p>
-      </div>
-      <div class="col-md-4">
-        <h4>Custom Software Development</h4>
-        <p>We design tailor-made software for process control, data logging, and dashboard reporting.</p>
-      </div>
-    </div>
 
-    <div class="row mt-4">
-      <div class="col-md-4">
-        <h4>Control Panel Design</h4>
-        <p>Expertise in designing and commissioning high-quality electrical control panels.</p>
-      </div>
-      <div class="col-md-4">
-        <h4>SCADA/HMI Configuration</h4>
-        <p>Development of interactive and efficient SCADA & HMI screens for plant operations.</p>
-      </div>
-      <div class="col-md-4">
-        <h4>Training & Support</h4>
-        <p>Technical training for your staff on automation tools and round-the-clock support.</p>
+      <div class="row mt-4">
+        <div class="col-md-4">
+          <h4>Control Panel Design</h4>
+          <p>Expertise in designing and commissioning high-quality electrical control panels.</p>
+        </div>
+        <div class="col-md-4">
+          <h4>SCADA/HMI Configuration</h4>
+          <p>Development of interactive and efficient SCADA & HMI screens for plant operations.</p>
+        </div>
+        <div class="col-md-4">
+          <h4>Training & Support</h4>
+          <p>Technical training for your staff on automation tools and round-the-clock support.</p>
+        </div>
       </div>
     </div>
   </div>
