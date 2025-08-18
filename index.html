@@ -7,175 +7,208 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
   <link rel="icon" type="image/png" href="favicon.png" sizes="32x32" />
   <style>
-   #products {
-  background-color: #ced4d8;
-}
+   /* General */
+   html, body {
+     background-color: #fff;
+     margin: 0;
+     padding: 0;
+     scroll-behavior: smooth;
+   }
 
    .navbar {
-  background-color: #c6d319;
-}
+     background-color: #c6d319;
+   }
 
-   html, body {
-  background-color: #c6d319;
-  margin: 0;
-  padding: 0;
-}
+   .navbar-nav .nav-link {
+     color: black !important;
+     font-weight: 500;
+   }
 
+   .navbar-brand {
+     display: flex;
+     align-items: center;
+   }
 
-    .img-fluid {
-      max-width: 100%;
-      height: auto;
-    }
-/* Hero container */
-.hero {
-  position: relative;
-  width: 100%;
-  height: 500px;  /* Fixed height */
-  overflow: hidden;
-}
+   .navbar-brand .logo {
+     width: 40px;
+     height: 40px;
+     margin-right: 10px;
+   }
 
-    .hero-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: blur(1px);   /* 👈 Adjust blur level */
-  transform: scale(1.1); /* Prevent white edges after blur */
-}
+   .ridtech { color: #ff5100; }
 
-/* Tagline Box */
-.tagline-box {
-  position: absolute;
-  bottom: 30px;  /* 👈 downside */
-  left: 30px;    /* 👈 left side */
-  background: rgba(0, 0, 0, 0.6); 
-  padding: 20px 25px;
-  border-radius: 10px;
-  color: white;
-  max-width: 500px;
-}
+   /* Hero */
+   .hero {
+     position: relative;
+     width: 100%;
+     height: 500px;
+     overflow: hidden;
+   }
 
-/* Title (Big Text) */
-.tagline-title {
-  font-size: 2rem;
-  font-weight: bold;
-  margin: 0;
-  opacity: 0;
-  transform: translateX(-100%);
-  animation: slideIn 1s ease-out forwards;
-  animation-delay: 2s; /* 👈 shows after 2 sec */
-}
+   .hero-img {
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
+     filter: blur(1px);
+     transform: scale(1.1);
+   }
 
-/* Subtitle (Small Text) */
-.tagline-subtitle {
-  font-size: 1rem;
-  margin-top: 10px;
-  opacity: 0;
-  animation: fadeIn 1s ease-in forwards;
-  animation-delay: 3.2s; /* 👈 shows after title */
-}
+   .tagline-box {
+     position: absolute;
+     bottom: 30px;
+     left: 30px;
+     background: rgba(0, 0, 0, 0.6);
+     padding: 20px 25px;
+     border-radius: 10px;
+     color: white;
+     max-width: 520px;
+   }
 
-/* Animations */
-@keyframes slideIn {
-  from { transform: translateX(-100%); opacity: 0; }
-  to { transform: translateX(0); opacity: 1; }
-}
+   .tagline-title {
+     font-size: 2.2rem;
+     font-weight: bold;
+     margin: 0;
+     opacity: 0;
+     transform: translateX(-100%);
+     animation: slideIn 1s ease-out forwards;
+     animation-delay: 2s;
+   }
 
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
+   .tagline-subtitle {
+     font-size: 1rem;
+     margin-top: 10px;
+     opacity: 0;
+     animation: fadeIn 1s ease-in forwards;
+     animation-delay: 3.2s;
+   }
 
+   @keyframes slideIn {
+     from { transform: translateX(-100%); opacity: 0; }
+     to { transform: translateX(0); opacity: 1; }
+   }
 
+   @keyframes fadeIn {
+     from { opacity: 0; }
+     to { opacity: 1; }
+   }
 
+   /* Products */
+   #products {
+     background-color: #f4f6f9;
+   }
 
+   .card {
+     border: none;
+     border-radius: 12px;
+     box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+   }
 
-    footer {
-  background-color: #c6d319;
-  color: black;
-}
+   /* Solutions */
+   .Solutions {
+     background-color: #404040;
+     border-radius: 10px;
+     padding: 50px 0;
+   }
 
-.navbar-nav .nav-link {
-  color: black !important;
-  font-weight: 500;
-}
+   .solution-card {
+     background-color: #cdecec;
+     border-radius: 10px;
+     width: 250px;
+     flex: 0 0 auto;
+     text-align: center;
+     padding: 15px;
+     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+     height: 460px;
+     display: flex;
+     flex-direction: column;
+   }
 
+   .solution-card img {
+     width: 100%;
+     height: 240px;
+     object-fit: cover;
+     border-radius: 8px;
+   }
 
-    .navbar-brand {
-      display: flex;
-      align-items: center;
-    }
+   /* ServIndia */
+   .servindia h2 span { letter-spacing: 0; }
 
-    .navbar-brand .logo {
-      width: 40px;
-      height: 40px;
-      margin-right: 10px;
-    }
+   .servindia img {
+     max-height: 500px;
+     width: auto;
+   }
 
-    .ridtech {
-      color: #ff5100;
-    }
+   /* Why Choose Us */
+   .why-choose .box {
+     background:#444;
+     border-radius: 10px;
+     padding: 25px;
+     transition: all 0.3s ease;
+   }
+   .why-choose .box:hover {
+     transform: translateY(-6px);
+     background:#555;
+   }
 
-  .Solutions {
-  background-color: #404040;
-  border-radius: 10px;
-  padding-top: 50px;
-  padding-bottom: 50px;
-}
+   /* About */
+   .about-section {
+     background: linear-gradient(135deg, #ffecd2, #fcb69f);
+     border-radius: 12px;
+     margin-bottom: 50px;
+     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+   }
 
+   /* Partners */
+   .partner-card {
+     transition: all 0.3s ease;
+     border: 2px solid transparent;
+   }
+   .partner-card img {
+     max-height: 90px;
+     object-fit: contain;
+     transition: transform 0.3s ease;
+   }
+   .partner-card:hover {
+     transform: translateY(-8px);
+     border-color: #c6d319;
+     box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+   }
+   .partner-card:hover img {
+     transform: scale(1.1);
+   }
 
-    .solution-card {
-  background-color: #cdecec;
-  border-radius: 10px;
-  width: 250px;
-  flex: 0 0 auto;
-  text-align: center;
-  padding: 15px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  height: 460px; /* total card height */
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-}
+   /* Footer */
+   footer {
+     background-color: #343a40;
+     color: white;
+     padding: 40px 0;
+   }
 
-.solution-card img {
-  width: 100%;
-  height: 240px; /* 👈 this controls image height */
-  object-fit: cover;
-  border-radius: 8px;
-}
-    .partner-logo {
-  height: 100px; /* Increase or adjust this as needed */
-  width: auto;
-  object-fit: contain;
-}
-html {
-  scroll-behavior: smooth;
-}
-    .partner-card {
-  transition: all 0.3s ease;
-  border: 2px solid transparent;
-}
-.partner-card img {
-  max-height: 90px;
-  object-fit: contain;
-  transition: transform 0.3s ease;
-}
-.partner-card:hover {
-  transform: translateY(-8px);
-  border-color: #c6d319;
-  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
-}
-.partner-card:hover img {
-  transform: scale(1.1);
-}
+   footer h5 {
+     font-weight: bold;
+     margin-bottom: 15px;
+   }
 
+   .footer-links li {
+     list-style: none;
+   }
 
+   .footer-links a {
+     color: #ddd;
+     text-decoration: none;
+     transition: color 0.3s;
+   }
+
+   .footer-links a:hover {
+     color: #ff5100;
+   }
   </style>
 </head>
 <body>
   <div class="main-bg">
+
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
       <div class="container">
         <a class="navbar-brand" href="#">
           <img src="images/logo.jpeg" alt="Logo" class="logo">
@@ -188,29 +221,25 @@ html {
           <ul class="navbar-nav ms-auto">
             <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
             <li class="nav-item"><a class="nav-link" href="service.html">Service</a></li>
-             <!-- Industry Dropdown Fixed -->
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="industryDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Industry
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="industryDropdown">
-            <li><a class="dropdown-item" href="#">Electronics</a></li>
-            <li><a class="dropdown-item" href="#">Information Technology</a></li>
-            <li><a class="dropdown-item" href="#">Automotive Industry</a></li>
-            <li><a class="dropdown-item" href="#">Pharma Industry</a></li>
-            <li><a class="dropdown-item" href="#">Mechanical Industry</a></li>
-          </ul>
-        </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="industryDropdown" role="button" data-bs-toggle="dropdown">Industry</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Electronics</a></li>
+                <li><a class="dropdown-item" href="#">Information Technology</a></li>
+                <li><a class="dropdown-item" href="#">Automotive Industry</a></li>
+                <li><a class="dropdown-item" href="#">Pharma Industry</a></li>
+                <li><a class="dropdown-item" href="#">Mechanical Industry</a></li>
+              </ul>
+            </li>
             <li class="nav-item"><a class="nav-link" href="#products">Product</a></li>
             <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
             <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
             <li class="nav-item"><a class="nav-link" href="career.html">Careers</a></li>
-            <li class="nav-item dropdown">
-
           </ul>
         </div>
       </div>
     </nav>
+
     
 <!-- Hero Section with Text Overlay -->
 <div class="hero position-relative">
