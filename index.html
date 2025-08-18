@@ -27,20 +27,56 @@
       height: auto;
     }
 
-    .hero img {
-      width: 100%;
-      height: auto;
-      max-height: 450px;
-      object-fit: cover;
-      display: block;
-    }
-    .hero {
-      position: relative;
-      width: 100%;
-      height: auto;
-      max-height: 500px;
-      overflow: hidden;
-    }
+   .hero {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-height: 500px;
+  overflow: hidden;
+}
+
+/* Tagline Box */
+.tagline-box {
+  position: absolute;
+  bottom: 30px;  /* 👈 downside */
+  left: 30px;    /* 👈 left side */
+  background: rgba(0, 0, 0, 0.6); 
+  padding: 20px 25px;
+  border-radius: 10px;
+  color: white;
+  max-width: 500px;
+}
+
+/* Title (Big Text) */
+.tagline-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0;
+  opacity: 0;
+  transform: translateX(-100%);
+  animation: slideIn 1s ease-out forwards;
+  animation-delay: 2s; /* 👈 shows after 2 sec */
+}
+
+/* Subtitle (Small Text) */
+.tagline-subtitle {
+  font-size: 1rem;
+  margin-top: 10px;
+  opacity: 0;
+  animation: fadeIn 1s ease-in forwards;
+  animation-delay: 3.2s; /* 👈 shows after title */
+}
+
+/* Animations */
+@keyframes slideIn {
+  from { transform: translateX(-100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
 
 
 
@@ -153,9 +189,15 @@ html {
     </nav>
     
 <!-- Hero Section with Text Overlay -->
-    <div class="hero">
-      <img src="images/rid.png" alt="Homepage Banner" class="img-fluid">
-    </div>
+<div class="hero position-relative">
+  <img src="images/rid.png" alt="Homepage Banner" class="img-fluid">
+
+  <!-- Tagline Block -->
+  <div class="tagline-box">
+    <h1 class="tagline-title">Innovating Electronics & Automation</h1>
+    <p class="tagline-subtitle">We design reliable solutions for industrial automation, instrumentation, and control systems.</p>
+  </div>
+</div>
 
 
     <!-- Products Section with Horizontal Scroll -->
