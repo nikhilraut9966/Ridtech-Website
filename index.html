@@ -200,25 +200,41 @@
      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
    }
 
-   /* Partners */
-   .partner-card {
-     transition: all 0.3s ease;
-     border: 2px solid transparent;
-   }
-   .partner-card img {
-     max-height: 180px;
-     object-fit: contain;
-     transition: transform 0.3s ease;
-     width: 100%;
-   }
-   .partner-card:hover {
-     transform: translateY(-8px);
-     border-color: #c6d319;
-     box-shadow: 0 6px 16px rgba(0,0,0,0.15);
-   }
-   .partner-card:hover img {
-     transform: scale(1.1);
-   }
+/* Partner Slider */
+.partners-slider {
+  overflow: hidden;
+  width: 100%;
+  max-width: 1100px;
+  margin: auto;
+  position: relative;
+}
+
+.partners-track {
+  display: flex;
+  transition: transform 0.8s ease-in-out;
+}
+
+.partner {
+  flex: 0 0 25%; /* 4 logos visible */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.partner img {
+  max-width: 140px;
+  max-height: 90px;
+  object-fit: contain;
+  filter: grayscale(100%) brightness(0.9);
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.partner img:hover {
+  filter: grayscale(0%) brightness(1.15);
+  transform: scale(1.1);
+}
+
 
   /* Footer Styles */
   footer {
@@ -690,37 +706,18 @@
       <span style="display:block; width:60px; height:3px; background:#000; margin:8px auto 0; border-radius:2px;"></span>
     </h2>
 
-    <div class="row text-center">
-      <div class="col-md-3 mb-4">
-        <div class="partner-card p-4 bg-white rounded shadow-sm h-100">
-          <img src="images/ptc.png" alt="Ptrans & Controls" class="img-fluid">
-        </div>
+    <!-- Slider Wrapper -->
+    <div class="partners-slider">
+      <div class="partners-track">
+        <div class="partner"><img src="images/ptc.png" alt="Ptrans & Controls"></div>
+        <div class="partner"><img src="images/two8.png" alt="Two8 Digital"></div>
+        <div class="partner"><img src="images/reet.png" alt="Reet Technologies"></div>
+        <div class="partner"><img src="images/ULA.jpg" alt="ULA"></div>
+        <div class="partner"><img src="images/logo.jpeg" alt="Ridtech"></div>
       </div>
-
-
-      <div class="col-md-3 mb-4">
-        <div class="partner-card p-4 bg-white rounded shadow-sm h-100">
-          <img src="images/two8.png" alt="Two8 Digital" class="img-fluid">
-        </div>
-      </div>
-
-      <div class="col-md-3 mb-4">
-        <div class="partner-card p-4 bg-white rounded shadow-sm h-100">
-          <img src="images/reet.png" alt="Reet Technologies" class="img-fluid">
-        </div>
-      </div>
-
-      <div class="col-md-3 mb-4">
-        <div class="partner-card p-4 bg-white rounded shadow-sm h-100">
-          <img src="images/ULA.jpg" alt="ULA" class="img-fluid">
-        </div>
-      </div>
-
-   
     </div>
   </div>
 </section>
-
 
 <section class="py-5 text-center" style="background: linear-gradient(135deg,#ff5100,#c6d319); color:white;">
   <div class="container">
@@ -729,6 +726,23 @@
     <a href="contact.html" class="btn btn-dark btn-lg px-4 py-2 mt-3" style="border-radius:30px;">Get in Touch</a>
   </div>
 </section>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const track = document.querySelector(".partners-track");
+  const partners = document.querySelectorAll(".partner");
+  const totalPartners = partners.length;
+  let index = 0;
+
+  setInterval(() => {
+    index++;
+    if (index > totalPartners - 4) { 
+      index = 0; // reset when end is reached
+    }
+    track.style.transform = `translateX(-${index * 25}%)`;
+  }, 5000); // move every 5 seconds
+});
+</script>
 
 
 
