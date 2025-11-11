@@ -53,6 +53,25 @@
   width:54px; height:54px; border-radius:14px; display:grid; place-items:center; font-size:26px; color:#fff;
   background: linear-gradient(135deg, #ff6b00, #c6d319);
 }
+.contact-card {
+  background: #fff;
+  border: 2px solid transparent;
+  border-radius: 16px;
+  padding: 22px;
+  box-shadow: 0 6px 18px rgba(0,0,0,.06);
+  transition: all .25s;
+  height: 100%;
+  background-image: linear-gradient(#fff, #fff),
+                    linear-gradient(135deg, #ff6b00, #c6d319);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+}
+
+.contact-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 26px rgba(0,0,0,.1);
+  border-color: #ff6b00;
+}
 
 /* ---------- FORM ---------- */
 .form-wrap{
