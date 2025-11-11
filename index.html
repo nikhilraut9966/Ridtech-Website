@@ -237,17 +237,53 @@
      max-height: 500px;
      width: auto;
    }
-   /* ---------- Process Timeline ---------- */
-    .timeline{ position:relative; }
-    .timeline::before{ content:""; position:absolute; left:calc(50% - 2px); top:0; bottom:0; width:4px; background:linear-gradient(180deg,var(--brand-orange),var(--brand-lime)); }
-    .tstep{ position:relative; padding:1.2rem 1rem; border-radius:14px; background:#fff; box-shadow:0 6px 16px rgba(0,0,0,.06); }
-    @media (min-width: 768px){
-      .tleft{ padding-right:3rem; }
-      .tright{ padding-left:3rem; }
-    }
-    .tbadge{ position:absolute; top:50%; transform:translateY(-50%); width:38px; height:38px; border-radius:50%; display:grid; place-items:center; color:#111; font-weight:800; background:#fff; border:3px solid var(--brand-orange); }
-    .tleft .tbadge{ right:-19px; }
-    .tright .tbadge{ left:-19px; }
+  /* ----- TIMELINE ----- */
+.timeline{ 
+  position: relative; 
+}
+.timeline::before{
+  content:"";
+  position:absolute;
+  left:50%;                     /* center line */
+  top:0; bottom:0;
+  width:4px;
+  transform: translateX(-50%);
+  background: linear-gradient(180deg,#ff5100,#c6d319);
+  border-radius: 3px;
+}
+
+/* each step card */
+.tstep{
+  position: relative;
+  padding: 1.2rem 1rem;
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 6px 16px rgba(0,0,0,.06);
+}
+
+/* number badge */
+.tbadge{
+  position:absolute;
+  top:50%;
+  transform: translateY(-50%);
+  width:38px; height:38px;
+  border-radius:50%;
+  display:grid; place-items:center;
+  color:#111; font-weight:800;
+  background:#fff;
+  border:3px solid #ff5100;
+}
+
+/* align badge to the inner edge of the center line */
+.tleft  .tbadge{ right:-19px; }   /* 38/2 = 19 */
+.tright .tbadge{ left:-19px;  }
+
+/* mobile: push line to the left so content fits */
+@media (max-width: 992px){
+  .timeline::before{ left: 10px; transform:none; }
+  .tleft .tbadge, .tright .tbadge{ left: -9px; right:auto; }
+}
+}
 
 
 
@@ -762,49 +798,54 @@
 </section>
 
  <!-- Process Timeline (new) -->
-  <section class="py-5" style="background:#fff">
-    <div class="container">
-      <h2 class="text-center section-title mb-4">How We Deliver — From Idea to Uptime</h2>
-      <span class="divider"></span>
-      <div class="row g-4 mt-2 timeline">
-        <div class="col-md-6 tleft">
-          <div class="tstep">
-            <div class="tbadge">1</div>
-            <h6>Requirement & Site Study</h6>
-            <p class="mb-0 text-muted">Workshops, P&IDs, IO lists, success criteria — we align on the problem & ROI.</p>
-          </div>
+ <section class="py-5" style="background:#fff">
+  <div class="container">
+    <h2 class="text-center fw-bold mb-4">How We Deliver — From Idea to Uptime</h2>
+
+    <div class="row g-4 mt-2 timeline">
+      <div class="col-md-6 tleft">
+        <div class="tstep">
+          <div class="tbadge">1</div>
+          <h6 class="mb-1">Requirement & Site Study</h6>
+          <p class="mb-0 text-muted">Workshops, P&IDs, IO lists, success criteria — we align on the problem & ROI.</p>
         </div>
-        <div class="col-md-6 tright">
-          <div class="tstep">
-            <div class="tbadge">2</div>
-            <h6>Design & BOM</h6>
-            <p class="mb-0 text-muted">Panel GA, wiring, PLC tags, camera optics, field devices, network & security.</p>
-          </div>
+      </div>
+
+      <div class="col-md-6 tright">
+        <div class="tstep">
+          <div class="tbadge">2</div>
+          <h6 class="mb-1">Design & BOM</h6>
+          <p class="mb-0 text-muted">Panel GA, wiring, PLC tags, camera optics, field devices, network & security.</p>
         </div>
-        <div class="col-md-6 tleft">
-          <div class="tstep">
-            <div class="tbadge">3</div>
-            <h6>Build & Program</h6>
-            <p class="mb-0 text-muted">Panel build, PLC/SCADA code, ML models (if any), dashboards & APIs.</p>
-          </div>
+      </div>
+
+      <div class="col-md-6 tleft">
+        <div class="tstep">
+          <div class="tbadge">3</div>
+          <h6 class="mb-1">Build & Program</h6>
+          <p class="mb-0 text-muted">Panel build, PLC/SCADA code, ML models (if any), dashboards & APIs.</p>
         </div>
-        <div class="col-md-6 tright">
-          <div class="tstep">
-            <div class="tbadge">4</div>
-            <h6>FAT/SAT & Training</h6>
-            <p class="mb-0 text-muted">Test cases, safety interlocks, documentation, on‑site commissioning.</p>
-          </div>
+      </div>
+
+      <div class="col-md-6 tright">
+        <div class="tstep">
+          <div class="tbadge">4</div>
+          <h6 class="mb-1">FAT/SAT & Training</h6>
+          <p class="mb-0 text-muted">Test cases, safety interlocks, documentation, on-site commissioning.</p>
         </div>
-        <div class="col-md-6 tleft">
-          <div class="tstep">
-            <div class="tbadge">5</div>
-            <h6>Handover & Support</h6>
-            <p class="mb-0 text-muted">SLA, remote support, spares & upgrades — keep your line running.</p>
-          </div>
+      </div>
+
+      <div class="col-md-6 tleft">
+        <div class="tstep">
+          <div class="tbadge">5</div>
+          <h6 class="mb-1">Handover & Support</h6>
+          <p class="mb-0 text-muted">SLA, remote support, spares & upgrades — keep your line running.</p>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
 
 
 
