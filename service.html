@@ -1,301 +1,341 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RidTech Solution - Services</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>RidTech Solution — Services</title>
+
+  <!-- Bootstrap / Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
   <style>
-/* Navbar Base */
-.navbar {
-  background: linear-gradient(90deg, #c6d319, #ff5100);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+/* -------- NAVBAR -------- */
+.navbar{
+  background: linear-gradient(90deg,#c6d319,#ff5100);
+  box-shadow: 0 4px 10px rgba(0,0,0,.12);
+}
+.navbar-brand{display:flex;align-items:center;font-weight:700;color:#fff!important}
+.navbar-brand .logo{width:45px;height:45px;border-radius:50%;border:2px solid #fff;margin-right:10px;object-fit:cover}
+.navbar-nav .nav-link{color:#fff!important;font-weight:500;padding:6px 14px;border-radius:20px;transition:.25s}
+.navbar-nav .nav-link:hover,.navbar-nav .nav-link.active{background:rgba(255,255,255,.28);color:#222!important}
+
+/* -------- HERO (FULL WIDTH) -------- */
+.hero{
+  position:relative;min-height:46vh;
+  background:url('images/services-hero.jpg') center/cover no-repeat;
+  display:flex;align-items:center
+}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.45),rgba(0,0,0,.55))}
+.hero .content{position:relative;z-index:1;color:#fff;padding:70px 0}
+.hero h1{font-weight:800;letter-spacing:.4px}
+.badge-soft{background:#fff3e8;color:#ff6b00;border:1px solid #ffd6b5;font-weight:600}
+
+/* -------- SECTION UTILS -------- */
+.section-pad{padding:70px 0}
+.container-xxl{max-width:1320px}
+
+/* -------- SERVICE CARDS -------- */
+.service-card{
+  position:relative;background:#fff;border-radius:16px;padding:22px;height:100%;
+  box-shadow:0 8px 20px rgba(0,0,0,.06);
+}
+.service-card::before{
+  content:"";position:absolute;inset:0;border-radius:16px;padding:1px;
+  background:linear-gradient(135deg,#ff6b00,#c6d319);
+  -webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
+  -webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none;
+}
+.service-card h4{margin:0 0 8px;color:#222;font-weight:700}
+.service-card p{color:#555;margin-bottom:10px}
+.service-card ul{margin:0 0 4px 18px}
+.service-card .icon{
+  width:56px;height:56px;border-radius:14px;display:grid;place-items:center;
+  font-size:26px;color:#fff;background:linear-gradient(135deg,#ff6b00,#c6d319)
+}
+.service-card:hover{transform:translateY(-4px);transition:transform .25s}
+
+/* -------- PROCESS STRIP (FULL WIDTH) -------- */
+.process{
+  background:linear-gradient(135deg,#fff 0%,#fff 60%, #fffdf4 100%);
+  border-top:1px solid #eee;border-bottom:1px solid #eee
+}
+.step{
+  background:#fff;border:1px solid #eee;border-radius:14px;padding:18px;height:100%;
+}
+.step .badge{background:#fff3e8;color:#ff6b00;border:1px solid #ffd6b5}
+
+/* -------- CTA -------- */
+.cta{
+  background:linear-gradient(135deg,#ff6b00,#c6d319);
+  color:#111;border-radius:16px;box-shadow:0 12px 30px rgba(0,0,0,.08)
 }
 
-.navbar-brand {
-  display: flex;
-  align-items: center;
-  font-weight: bold;
-  font-size: 1.3rem;
-  color: #fff !important;
-}
-
-.navbar-brand .logo {
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
-  border: 2px solid #fff;
-  margin-right: 10px;
-}
-
-.navbar-nav .nav-link {
-  color: #fff !important;
-  font-weight: 500;
-  padding: 6px 14px;
-  border-radius: 20px;
-  transition: all 0.3s ease;
-}
-
-.navbar-nav .nav-link:hover,
-.navbar-nav .nav-link.active {
-  background: rgba(255,255,255,0.3);
-  color: #222 !important;
-}
-
-/* Dropdown */
-.dropdown-menu {
-  border: none;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  padding: 10px 0;
-}
-.dropdown-menu .dropdown-item {
-  font-weight: 500;
-  padding: 8px 20px;
-  color: #333;
-  transition: all 0.2s ease;
-}
-.dropdown-menu .dropdown-item:hover {
-  background: linear-gradient(90deg, #ff5100, #c6d319);
-  color: #fff;
-  border-radius: 6px;
-}
-    .service-box {
-  background: #fff;
-  border: 4px solid #ff5100; /* thick orange border */
-  border-radius: 12px;
-  padding: 25px;
-  margin-bottom: 25px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.service-box:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
-}
-
-.service-box h4 {
-  color: #ff5100;
-  font-weight: 600;
-  margin-bottom: 12px;
-}
-
-/* Contact Box */
-body {
-  background-color: #f9f9f9;
-}
-.contact-box {
-  background: white;
-  padding: 40px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  text-align: center;
-}
-h1 {
-  color: #0056b3;
-}
-p {
-  font-size: 18px;
-  margin: 10px 0;
-}
-
-/* Footer */
-footer {
-  background: linear-gradient(135deg, #1f1f1f, #343a40);
-  color: #ddd;
-  padding: 50px 0 20px 0;
-  font-size: 0.95rem;
-}
-footer h5 {
-  font-weight: 600;
-  margin-bottom: 20px;
-  color: #ff5100;
-  font-size: 1.2rem;
-  position: relative;
-}
-footer h5::after {
-  content: "";
-  display: block;
-  width: 40px;
-  height: 3px;
-  background: #ff5100;
-  margin-top: 6px;
-  border-radius: 2px;
-}
-.footer-links {
-  padding: 0;
-  margin: 0;
-}
-.footer-links li {
-  list-style: none;
-  margin-bottom: 10px;
-}
-.footer-links a {
-  color: #bbb;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-.footer-links a:hover {
-  color: #ff5100;
-  padding-left: 5px;
-}
-footer p {
-  margin-bottom: 8px;
-  color: #ccc;
-}
-footer p strong {
-  color: #fff;
-}
-footer hr {
-  border-top: 1px solid rgba(255,255,255,0.1);
-  margin: 25px 0;
-}
-footer .text-center p {
-  margin: 0;
-  color: #aaa;
-  font-size: 0.9rem;
-}
-@media (max-width: 768px) {
-  footer {
-    text-align: center;
-  }
-  footer h5::after {
-    margin: 8px auto 0;
-  }
-}
+/* -------- FOOTER -------- */
+footer{background:linear-gradient(135deg,#1f1f1f,#343a40);color:#ddd;padding:50px 0 20px}
+footer h5{font-weight:600;margin-bottom:20px;color:#ff5100}
+footer h5::after{content:"";display:block;width:40px;height:3px;background:#ff5100;margin-top:6px;border-radius:2px}
+.footer-links{padding:0;margin:0}
+.footer-links li{list-style:none;margin-bottom:10px}
+.footer-links a{color:#bbb;text-decoration:none;transition:.25s}
+.footer-links a:hover{color:#ff5100;padding-left:5px}
+footer hr{border-top:1px solid rgba(255,255,255,.1);margin:25px 0}
+footer .text-center p{margin:0;color:#aaa;font-size:.9rem}
+@media (max-width: 992px){ .hero{min-height:42vh} }
   </style>
 </head>
 <body>
 
-  <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
-    <div class="container">
-      <a class="navbar-brand d-flex align-items-center" href="index.html">
-        <img src="images/logo.jpeg" alt="Logo" class="logo">
-        <span>Rid<span style="color:#222;">Tech</span></span>
-        <span style="color:#fff; margin-left:4px;">Solution</span>
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto align-items-center">
-          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="service.html">Service</a></li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="industryDropdown" role="button" data-bs-toggle="dropdown">Industry</a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Electronics</a></li>
-              <li><a class="dropdown-item" href="#">Information Technology</a></li>
-              <li><a class="dropdown-item" href="#">Automotive Industry</a></li>
-              <li><a class="dropdown-item" href="#">Pharma Industry</a></li>
-              <li><a class="dropdown-item" href="#">Mechanical Industry</a></li>
-            </ul>
-          </li>
-          <li class="nav-item"><a class="nav-link" href="index.html#products">Product</a></li>
-          <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
-          <li class="nav-item"><a class="nav-link active" href="contact.html">Contact Us</a></li>
-          <li class="nav-item"><a class="nav-link btn btn-light text-dark px-3 py-1 ms-2 rounded-pill fw-semibold" href="career.html">Careers</a></li>
+<!-- NAV -->
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+  <div class="container-xxl">
+    <a class="navbar-brand" href="index.html">
+      <img src="images/logo.jpeg" alt="RidTech Logo" class="logo">
+      <span>Rid<span style="color:#222;">Tech</span></span>
+      <span style="color:#fff;margin-left:4px;">Solution</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="nav">
+      <ul class="navbar-nav ms-auto align-items-center">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link active" href="service.html">Service</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="industryDropdown" role="button" data-bs-toggle="dropdown">Industry</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Electronics</a></li>
+            <li><a class="dropdown-item" href="#">Information Technology</a></li>
+            <li><a class="dropdown-item" href="#">Automotive Industry</a></li>
+            <li><a class="dropdown-item" href="#">Pharma Industry</a></li>
+            <li><a class="dropdown-item" href="#">Mechanical Industry</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="index.html#products">Product</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+        <li class="nav-item"><a class="nav-link btn btn-light text-dark px-3 py-1 ms-2 rounded-pill fw-semibold" href="career.html">Careers</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO (full-width) -->
+<section class="hero">
+  <div class="container-xxl">
+    <div class="content">
+      <span class="badge badge-soft px-3 py-2 rounded-pill">Electronics • PLC • SCADA • IoT • QA</span>
+      <h1 class="display-6 mt-3">Industrial Automation & Software that scales with your plant</h1>
+      <p class="mb-0">From clean PLC panels to dashboards and cloud alerts — we deliver end-to-end systems that are reliable, documented and service-friendly.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES GRID -->
+<section class="section-pad">
+  <div class="container-xxl">
+    <h2 class="mb-4 text-center">Our Core Services</h2>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-4">
+        <div class="service-card">
+          <div class="d-flex gap-3 align-items-start mb-2">
+            <div class="icon"><i class="bi bi-cpu"></i></div>
+            <div>
+              <h4>Industrial Automation</h4>
+              <p>Turnkey PLC/HMI projects with neat wiring, safety interlocks, FAT/SAT, and documentation.</p>
+              <ul>
+                <li>Siemens / Schneider / Eaton</li>
+                <li>Ladder / FB / SCL</li>
+                <li>Commissioning & Training</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="service-card">
+          <div class="d-flex gap-3 align-items-start mb-2">
+            <div class="icon"><i class="bi bi-display"></i></div>
+            <div>
+              <h4>SCADA / HMI</h4>
+              <p>Clean layouts with alarms, historian, recipes, reports and role-based access.</p>
+              <ul>
+                <li>OPC-UA / MQTT</li>
+                <li>Audit & Traceability</li>
+                <li>Shift & Batch Reports</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="service-card">
+          <div class="d-flex gap-3 align-items-start mb-2">
+            <div class="icon"><i class="bi bi-cloud-upload"></i></div>
+            <div>
+              <h4>IIoT Integration</h4>
+              <p>Connect machines to cloud dashboards with secure gateways and alerts.</p>
+              <ul>
+                <li>MQTT / REST APIs</li>
+                <li>Remote monitoring</li>
+                <li>Predictive alerts</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="service-card">
+          <div class="d-flex gap-3 align-items-start mb-2">
+            <div class="icon"><i class="bi bi-columns-gap"></i></div>
+            <div>
+              <h4>Custom Software & QA</h4>
+              <p>Web apps, data logging, APIs and automation testing (Java + Selenium, TestNG).</p>
+              <ul>
+                <li>Dashboards & Reports</li>
+                <li>Regression Automation</li>
+                <li>CI readyness</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="service-card">
+          <div class="d-flex gap-3 align-items-start mb-2">
+            <div class="icon"><i class="bi bi-lightning-charge"></i></div>
+            <div>
+              <h4>Control Panel Design</h4>
+              <p>Professionally built panels with GA drawings, routing, labeling and testing.</p>
+              <ul>
+                <li>TPN/Power & Control</li>
+                <li>VFD/Servo integration</li>
+                <li>AMC & Upgrades</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="service-card">
+          <div class="d-flex gap-3 align-items-start mb-2">
+            <div class="icon"><i class="bi bi-easel2-fill"></i></div>
+            <div>
+              <h4>LED & Jumbo Displays</h4>
+              <p>Indoor/outdoor displays for plants, campaigns and events with software control.</p>
+              <ul>
+                <li>Scoreboards & Andon</li>
+                <li>Large text/graphics</li>
+                <li>On-site deployment</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS (FULL-WIDTH STRIP) -->
+<section class="process section-pad">
+  <div class="container-xxl">
+    <h2 class="mb-4 text-center">Our Delivery Process</h2>
+    <div class="row g-3">
+      <div class="col-md-6 col-lg-3">
+        <div class="step h-100">
+          <span class="badge rounded-pill mb-2">1</span>
+          <h6 class="mb-1">Discover</h6>
+          <p class="mb-0 text-muted">Site study, I/O mapping, scope & milestones.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="step h-100">
+          <span class="badge rounded-pill mb-2">2</span>
+          <h6 class="mb-1">Design</h6>
+          <p class="mb-0 text-muted">GA, SLD, tag plan, PLC/HMI architecture.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="step h-100">
+          <span class="badge rounded-pill mb-2">3</span>
+          <h6 class="mb-1">Build</h6>
+          <p class="mb-0 text-muted">Panel wiring, programming, FAT/SAT.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="step h-100">
+          <span class="badge rounded-pill mb-2">4</span>
+          <h6 class="mb-1">Run</h6>
+          <p class="mb-0 text-muted">Training, AMC, analytics & enhancements.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section-pad pt-0">
+  <div class="container-xxl">
+    <div class="cta p-4 p-md-5 text-center">
+      <h3 class="mb-2">Need a reliable automation partner?</h3>
+      <p class="mb-3">Share your use-case — we’ll propose a practical plan with clear milestones.</p>
+      <a class="btn btn-dark me-2" href="mailto:sales@ridtechsolution.com">sales@ridtechsolution.com</a>
+      <a class="btn btn-outline-dark" href="contact.html">Talk to our team</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container-xxl">
+    <div class="row">
+      <div class="col-md-3">
+        <h5>Company</h5>
+        <ul class="footer-links">
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="career.html">Careers</a></li>
+          <li><a href="#">Events</a></li>
+          <li><a href="#">Partners</a></li>
         </ul>
       </div>
-    </div>
-  </nav>
-  </div>
-
-  <!-- Services Section -->
-  <div class="container py-5">
-    <div class="section-box">
-      <h1 class="text-center mb-4">Our Services</h1>
-     <div class="row">
-  <div class="col-md-4">
-    <div class="service-box">
-      <h4>Industrial Automation</h4>
-      <p>We provide complete automation solutions using PLC, SCADA, and HMI systems for various industries.</p>
-    </div>
-  </div>
-  <div class="col-md-4">
-    <div class="service-box">
-      <h4>IIoT Integration</h4>
-      <p>Connect your industrial devices to the cloud for real-time monitoring and predictive maintenance.</p>
-    </div>
-  </div>
-  <div class="col-md-4">
-    <div class="service-box">
-      <h4>Custom Software Development</h4>
-      <p>We design tailor-made software for process control, data logging, and dashboard reporting.</p>
-    </div>
-  </div>
-</div>
-
-<div class="row mt-4">
-  <div class="col-md-4">
-    <div class="service-box">
-      <h4>Control Panel Design</h4>
-      <p>Expertise in designing and commissioning high-quality electrical control panels.</p>
-    </div>
-  </div>
-  <div class="col-md-4">
-    <div class="service-box">
-      <h4>SCADA/HMI Configuration</h4>
-      <p>Development of interactive and efficient SCADA & HMI screens for plant operations.</p>
-    </div>
-  </div>
-  <div class="col-md-4">
-    <div class="service-box">
-      <h4>Training & Support</h4>
-      <p>Technical training for your staff on automation tools and round-the-clock support.</p>
-    </div>
-  </div>
-</div>
-
-
- <!-- Footer -->
-  <footer>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-3">
-          <h5>Company</h5>
-          <ul class="footer-links">
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="career.html">Careers</a></li>
-            <li><a href="#">Events</a></li>
-            <li><a href="#">Partners</a></li>
-          </ul>
-        </div>
-        <div class="col-md-3">
-          <h5>Support</h5>
-          <ul class="footer-links">
-            <li><a href="contact.html">Contact Us</a></li>
-            <li><a href="service.html">Service</a></li>
-            <li><a href="#">Help Center</a></li>
-            <li><a href="#">Privacy Policy</a></li>
-          </ul>
-        </div>
-        <div class="col-md-3">
-          <h5>Industries</h5>
-          <ul class="footer-links">
-            <li><a href="#">Manufacturing</a></li>
-            <li><a href="#">Utilities</a></li>
-            <li><a href="#">Automation</a></li>
-            <li><a href="#">Electronics</a></li>
-          </ul>
-        </div>
-        <div class="col-md-3">
-          <h5>Contact</h5>
-          <p>Email: sales@ridtechsolution.com</p>
-          <p>Phone: +91-9890123998</p>
-          <p>Address: B1-507, Amrutvel Society, Near Chaitanya Hospital, Warje-Pune, Maharashtra, India</p>
-        </div>
+      <div class="col-md-3">
+        <h5>Support</h5>
+        <ul class="footer-links">
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="service.html">Service</a></li>
+          <li><a href="#">Help Center</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+        </ul>
       </div>
-      <hr>
-      <div class="text-center mt-3">
-        <p>&copy; 2025 RidTech Solution. All Rights Reserved.</p>
+      <div class="col-md-3">
+        <h5>Industries</h5>
+        <ul class="footer-links">
+          <li><a href="#">Manufacturing</a></li>
+          <li><a href="#">Utilities</a></li>
+          <li><a href="#">Automation</a></li>
+          <li><a href="#">Electronics</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3">
+        <h5>Contact</h5>
+        <p><strong>Email:</strong> sales@ridtechsolution.com</p>
+        <p><strong>Phone:</strong> +91-9890123998</p>
+        <p><strong>Address:</strong> B1-507, Amrutvel Society, Near Chaitanya Hospital, Warje-Pune, Maharashtra, India</p>
       </div>
     </div>
-  </footer>
+    <hr>
+    <div class="text-center mt-3">
+      <p>&copy; 2025 RidTech Solution. All Rights Reserved.</p>
+    </div>
   </div>
+</footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
