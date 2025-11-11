@@ -145,10 +145,61 @@
      box-shadow: 0 4px 8px rgba(0,0,0,0.08);
    }
 
-       /* ---------- Counters ---------- */
-    .metrics{ background:linear-gradient(135deg,#343a40,#1f1f1f); color:#fff; }
-    .metric h3{ font-size:2rem; font-weight:800; }
-    .metric p{ margin:0; color:#d1d5db; }
+      /* Impact Metrics */
+.metrics{
+  background: linear-gradient(135deg,#343a40,#1f1f1f);
+  color:#fff;
+}
+.metric{
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  padding: 24px 16px;
+  box-shadow: 0 10px 24px rgba(0,0,0,.15);
+  transition: transform .25s ease, box-shadow .25s ease, background .25s ease;
+}
+.metric:hover{
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px rgba(0,0,0,.25);
+  background: rgba(255,255,255,0.10);
+}
+.metric h3{
+  font-weight: 800;
+  font-size: 2.25rem;
+  line-height: 1;
+  margin: 0 0 6px 0;
+  letter-spacing: .5px;
+}
+.metric p{
+  margin:0;
+  color:#d1d5db;
+  font-weight: 500;
+  letter-spacing: .2px;
+}
+
+/* subtle divider under the row on large screens (optional) */
+@media (min-width: 992px){
+  .metrics .row{
+    position: relative;
+  }
+  .metrics .row::after{
+    content:"";
+    position:absolute;
+    bottom:-12px; left:50%;
+    transform: translateX(-50%);
+    width: 80px; height: 3px;
+    background: linear-gradient(90deg,#ff5100,#c6d319);
+    border-radius: 2px;
+    opacity:.85;
+  }
+}
+
+/* spacing tweaks on small screens */
+@media (max-width: 576px){
+  .metric{ padding: 18px 14px; }
+  .metric h3{ font-size: 1.9rem; }
+}
+
 
     
 
