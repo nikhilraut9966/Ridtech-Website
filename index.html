@@ -237,52 +237,19 @@
      max-height: 500px;
      width: auto;
    }
-  /* ----- TIMELINE ----- */
-.timeline{ 
-  position: relative; 
-}
-.timeline::before{
-  content:"";
-  position:absolute;
-  left:50%;                     /* center line */
-  top:0; bottom:0;
-  width:4px;
-  transform: translateX(-50%);
-  background: linear-gradient(180deg,#ff5100,#c6d319);
-  border-radius: 3px;
-}
+   /* ---------- Process Timeline ---------- */
+    .timeline{ position:relative; }
+    .timeline::before{ content:""; position:absolute; left:calc(50% - 2px); top:0; bottom:0; width:4px; background:linear-gradient(180deg,var(--brand-orange),var(--brand-lime)); }
+    .tstep{ position:relative; padding:1.2rem 1rem; border-radius:14px; background:#fff; box-shadow:0 6px 16px rgba(0,0,0,.06); }
+    @media (min-width: 768px){
+      .tleft{ padding-right:3rem; }
+      .tright{ padding-left:3rem; }
+    }
+    .tbadge{ position:absolute; top:50%; transform:translateY(-50%); width:38px; height:38px; border-radius:50%; display:grid; place-items:center; color:#111; font-weight:800; background:#fff; border:3px solid var(--brand-orange); }
+    .tleft .tbadge{ right:-19px; }
+    .tright .tbadge{ left:-19px; }
 
-/* each step card */
-.tstep{
-  position: relative;
-  padding: 1.2rem 1rem;
-  border-radius: 14px;
-  background: #fff;
-  box-shadow: 0 6px 16px rgba(0,0,0,.06);
-}
 
-/* number badge */
-.tbadge{
-  position:absolute;
-  top:50%;
-  transform: translateY(-50%);
-  width:38px; height:38px;
-  border-radius:50%;
-  display:grid; place-items:center;
-  color:#111; font-weight:800;
-  background:#fff;
-  border:3px solid #ff5100;
-}
-
-/* align badge to the inner edge of the center line */
-.tleft  .tbadge{ right:-19px; }   /* 38/2 = 19 */
-.tright .tbadge{ left:-19px;  }
-
-/* mobile: push line to the left so content fits */
-@media (max-width: 992px){
-  .timeline::before{ left: 10px; transform:none; }
-  .tleft .tbadge, .tright .tbadge{ left: -9px; right:auto; }
-}
 
 
 
