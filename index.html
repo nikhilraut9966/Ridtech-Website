@@ -1,3 +1,4 @@
+i want to make my website home page very attractive and professional please skip this page product hero and solution as it is partners also skip as it is but add extra thing as per your idea so page looks very unique real and attractive
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,657 +8,818 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
   <link rel="icon" type="image/png" href="favicon.png" sizes="32x32" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
-  <style>
-    /* ---------- Base / Reset ---------- */
-    :root{
-      --brand-orange:#ff5100;
-      --brand-lime:#c6d319;
-      --ink:#1f1f1f;
-      --muted:#6c757d;
-      --bg:#ffffff;
-      --card:#ffffff;
-      --soft:#f4f6f9;
-      --grad:linear-gradient(90deg, var(--brand-lime), var(--brand-orange));
+ <style>
+   /* General */
+   html, body {
+     background-color: #fff;
+     margin: 0;
+     padding: 0;
+     scroll-behavior: smooth;
+   }
+
+/* Navbar Base */
+.navbar {
+  background: linear-gradient(90deg, #c6d319, #ff5100); /* gradient background */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* subtle shadow */
+  transition: all 0.3s ease;
+}
+
+/* Brand */
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.3rem;
+  color: #fff !important;
+}
+
+.navbar-brand .logo {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  margin-right: 10px;
+}
+
+/* Navbar Links */
+.navbar-nav .nav-link {
+  color: #fff !important;
+  font-weight: 500;
+  padding: 6px 14px;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+  background: rgba(255,255,255,0.3);
+  color: #222 !important;
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  padding: 10px 0;
+}
+
+.dropdown-menu .dropdown-item {
+  font-weight: 500;
+  padding: 8px 20px;
+  color: #333;
+  transition: all 0.2s ease;
+}
+
+.dropdown-menu .dropdown-item:hover {
+  background: linear-gradient(90deg, #ff5100, #c6d319);
+  color: #fff;
+  border-radius: 6px;
+}
+
+
+   .ridtech { color: #ff5100; }
+
+   /* Hero */
+   .hero {
+     position: relative;
+     width: 100%;
+     height: 500px;
+     overflow: hidden;
+   }
+
+   .hero-img {
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
+     filter: blur(1px);
+     transform: scale(1.1);
+   }
+
+   .tagline-box {
+     position: absolute;
+     bottom: 30px;
+     left: 30px;
+     background: rgba(0, 0, 0, 0.6);
+     padding: 20px 25px;
+     border-radius: 10px;
+     color: white;
+     max-width: 520px;
+   }
+
+   .tagline-title {
+     font-size: 2.2rem;
+     font-weight: bold;
+     margin: 0;
+     opacity: 0;
+     transform: translateX(-100%);
+     animation: slideIn 1s ease-out forwards;
+     animation-delay: 2s;
+   }
+
+   .tagline-subtitle {
+     font-size: 1rem;
+     margin-top: 10px;
+     opacity: 0;
+     animation: fadeIn 1s ease-in forwards;
+     animation-delay: 3.2s;
+   }
+
+   @keyframes slideIn {
+     from { transform: translateX(-100%); opacity: 0; }
+     to { transform: translateX(0); opacity: 1; }
+   }
+
+   @keyframes fadeIn {
+     from { opacity: 0; }
+     to { opacity: 1; }
+   }
+
+   /* Products */
+   #products {
+     background-color: #f4f6f9;
+   }
+
+   .card {
+     border: none;
+     border-radius: 12px;
+     box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+   }
+
+   /* Solutions */
+   .Solutions {
+     background-color: #404040;
+     border-radius: 10px;
+     padding: 50px 0;
+   }
+
+   .solution-card {
+     background-color: #cdecec;
+     border-radius: 10px;
+     width: 250px;
+     flex: 0 0 auto;
+     text-align: center;
+     padding: 15px;
+     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+     height: 460px;
+     display: flex;
+     flex-direction: column;
+   }
+
+   .solution-card img {
+     width: 100%;
+     height: 240px;
+     object-fit: cover;
+     border-radius: 8px;
+   }
+
+   /* ServIndia */
+   .servindia h2 span { letter-spacing: 0; }
+
+   .servindia img {
+     max-height: 500px;
+     width: auto;
+   }
+
+   /* Why Choose Us */
+   .why-choose .box {
+     background:#444;
+     border-radius: 10px;
+     padding: 25px;
+     transition: all 0.3s ease;
+   }
+   .why-choose .box:hover {
+     transform: translateY(-6px);
+     background:#555;
+   }
+
+   /* About */
+   .about-section {
+     background: linear-gradient(135deg, #ffecd2, #fcb69f);
+     border-radius: 12px;
+     margin-bottom: 50px;
+     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+   }
+
+/* Partner Slider */
+.partners-slider {
+  overflow: hidden;
+  width: 100%;
+  max-width: 1100px;
+  margin: auto;
+  position: relative;
+}
+
+.partners-track {
+  display: flex;
+  transition: transform 0.8s ease-in-out;
+}
+
+.partner {
+  flex: 0 0 25%; /* 4 logos visible */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.partner img {
+  max-width: 140px;
+  max-height: 90px;
+  object-fit: contain;
+  filter: grayscale(100%) brightness(0.9);
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.partner img:hover {
+  filter: grayscale(0%) brightness(1.15);
+  transform: scale(1.1);
+}
+
+
+  /* Footer Styles */
+  footer {
+    background: linear-gradient(135deg, #1f1f1f, #343a40);
+    color: #ddd;
+    padding: 50px 0 20px 0;
+    font-size: 0.95rem;
+  }
+
+  footer h5 {
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #ff5100;
+    font-size: 1.2rem;
+    position: relative;
+  }
+
+  footer h5::after {
+    content: "";
+    display: block;
+    width: 40px;
+    height: 3px;
+    background: #ff5100;
+    margin-top: 6px;
+    border-radius: 2px;
+  }
+
+  .footer-links {
+    padding: 0;
+    margin: 0;
+  }
+
+  .footer-links li {
+    list-style: none;
+    margin-bottom: 10px;
+  }
+
+  .footer-links a {
+    color: #bbb;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .footer-links a:hover {
+    color: #ff5100;
+    padding-left: 5px;
+  }
+
+  footer p {
+    margin-bottom: 8px;
+    color: #ccc;
+  }
+
+  footer p strong {
+    color: #fff;
+  }
+
+  footer hr {
+    border-top: 1px solid rgba(255,255,255,0.1);
+    margin: 25px 0;
+  }
+
+  footer .text-center p {
+    margin: 0;
+    color: #aaa;
+    font-size: 0.9rem;
+  }
+
+  /* Responsive Fixes */
+  @media (max-width: 768px) {
+    /* Hero */
+    .hero { height: 320px; }
+    .tagline-title { font-size: 1.6rem; }
+    .tagline-subtitle { font-size: 0.9rem; }
+    .tagline-box {
+      bottom: 15px;
+      left: 15px;
+      padding: 12px 15px;
+      max-width: 90%;
     }
-    html, body { background: var(--bg); margin: 0; padding: 0; scroll-behavior: smooth; }
-    img{ max-width:100%; height:auto; }
 
-    /* ---------- Top Announcement Bar ---------- */
-    .topbar{ background:var(--grad); color:#fff; font-size:.95rem; }
-    .topbar a{ color:#111; font-weight:600; background:#fff; border-radius:999px; padding:.25rem .8rem; }
+    /* ServIndia */
+    .servindia-text { text-align: center; margin-bottom: 20px; }
+    .servindia img { max-height: 300px; }
 
-    /* ---------- Navbar ---------- */
-    .navbar{ background: var(--grad); box-shadow:0 4px 8px rgba(0,0,0,.08); }
-    .navbar-brand{ display:flex; align-items:center; font-weight:700; font-size:1.25rem; color:#fff !important; }
-    .navbar-brand .logo{ width:45px; height:45px; border-radius:50%; border:2px solid #fff; margin-right:10px; object-fit:cover; }
-    .navbar-nav .nav-link{ color:#fff !important; font-weight:500; padding:6px 14px; border-radius:20px; transition:.25s; }
-    .navbar-nav .nav-link:hover, .navbar-nav .nav-link.active{ background:rgba(255,255,255,.3); color:#111 !important; }
-    .dropdown-menu{ border:none; border-radius:12px; box-shadow:0 8px 24px rgba(0,0,0,.12); }
-
-    /* ---------- Hero (unchanged visual, minor perf) ---------- */
-    .hero{ position:relative; width:100%; height:500px; overflow:hidden; }
-    .hero-img{ width:100%; height:100%; object-fit:cover; filter:blur(1px); transform:scale(1.1); }
-    .tagline-box{ position:absolute; bottom:30px; left:30px; background:rgba(0,0,0,.6); padding:20px 24px; border-radius:12px; color:#fff; max-width:560px; backdrop-filter:saturate(120%) blur(4px); }
-    .tagline-title{ font-size:2.2rem; font-weight:800; margin:0; opacity:0; transform:translateX(-100%); animation:slideIn 1s ease-out forwards; animation-delay: 1.2s; }
-    .tagline-subtitle{ font-size:1rem; margin-top:10px; opacity:0; animation:fadeIn 1s ease-in forwards; animation-delay: 2.2s; }
-    @keyframes slideIn{ from{ transform:translateX(-100%); opacity:0;} to{ transform:translateX(0); opacity:1;} }
-    @keyframes fadeIn{ from{ opacity:0;} to{ opacity:1;} }
-
-    /* ---------- Section helpers ---------- */
-    .section-title{ font-weight:800; color:var(--ink); letter-spacing:.2px; }
-    .divider{ display:block; width:64px; height:3px; background:var(--brand-orange); border-radius:2px; margin:.5rem auto 0; }
-
-    /* ---------- Trust Bar ---------- */
-    .trustbar{ background:#101214; color:#d1d5db; }
-    .trustbar .icon{ font-size:1.25rem; }
-
-    /* ---------- Cards ---------- */
-    .card-soft{ background:var(--card); border:none; border-radius:16px; box-shadow:0 8px 24px rgba(0,0,0,.08); }
-    .card-soft:hover{ transform:translateY(-4px); box-shadow:0 16px 32px rgba(0,0,0,.12); transition:.25s; }
-
-    /* ---------- Counters ---------- */
-    .metrics{ background:linear-gradient(135deg,#343a40,#1f1f1f); color:#fff; }
-    .metric h3{ font-size:2rem; font-weight:800; }
-    .metric p{ margin:0; color:#d1d5db; }
-
-    /* ---------- Industries Grid ---------- */
-    .industry-card{ display:flex; gap:14px; align-items:flex-start; padding:18px; border-radius:14px; background:#ffffff; box-shadow:0 6px 16px rgba(0,0,0,.06); height:100%; }
-    .industry-card .bi{ font-size:28px; color:var(--brand-orange); }
-
-    /* ---------- Case Studies Carousel ---------- */
-    .case-caption{ background:rgba(0,0,0,.55); backdrop-filter: blur(2px); }
-
-    /* ---------- Process Timeline ---------- */
-    .timeline{ position:relative; }
-    .timeline::before{ content:""; position:absolute; left:calc(50% - 2px); top:0; bottom:0; width:4px; background:linear-gradient(180deg,var(--brand-orange),var(--brand-lime)); }
-    .tstep{ position:relative; padding:1.2rem 1rem; border-radius:14px; background:#fff; box-shadow:0 6px 16px rgba(0,0,0,.06); }
-    @media (min-width: 768px){
-      .tleft{ padding-right:3rem; }
-      .tright{ padding-left:3rem; }
+    /* Cards */
+    .solution-card,
+    .partner-card {
+      width: 100% !important;
+      margin: 0 auto 15px;
     }
-    .tbadge{ position:absolute; top:50%; transform:translateY(-50%); width:38px; height:38px; border-radius:50%; display:grid; place-items:center; color:#111; font-weight:800; background:#fff; border:3px solid var(--brand-orange); }
-    .tleft .tbadge{ right:-19px; }
-    .tright .tbadge{ left:-19px; }
 
-    /* ---------- FAQ ---------- */
-    .faq .accordion-button:not(.collapsed){ background:#fff3e9; color:#111; }
+    /* Footer */
+    footer { text-align: center; }
+    footer h5::after { margin: 8px auto 0; }
+    footer .col-md-3 { margin-bottom: 20px; }
+  }
 
-    /* ---------- Existing sections minor wrappers ---------- */
-    #products{ background:var(--soft); }
-    .Solutions{ background:#404040; border-radius:10px; padding:50px 0; }
+  @media (max-width: 480px) {
+    .hero { height: 250px; }
+    .tagline-title { font-size: 1.3rem; }
+    .tagline-subtitle { font-size: 0.8rem; }
+    h2 { font-size: 1.4rem !important; }
+    p, li { font-size: 0.9rem !important; }
+  }
+</style>
 
-    /* ---------- Floating Action Buttons ---------- */
-    .fab{ position:fixed; right:16px; z-index:1050; display:flex; flex-direction:column; gap:10px; }
-    .fab .btn{ border-radius:999px; box-shadow:0 8px 24px rgba(0,0,0,.2); }
-    .fab-bottom{ bottom:16px; }
-
-    /* ---------- Footer tweaks (kept) ---------- */
-    footer{ background: linear-gradient(135deg, #1f1f1f, #343a40); color:#ddd; }
-
-    /* ---------- Responsive ---------- */
-    @media (max-width: 992px){ .timeline::before{ left:10px; } .tleft .tbadge, .tright .tbadge{ left:-9px; right:auto; } }
-    @media (max-width: 768px){ .hero{ height:320px; } .tagline-title{ font-size:1.6rem; } .tagline-subtitle{ font-size:.95rem; } }
-    @media (max-width: 480px){ .hero{ height:250px; } .tagline-title{ font-size:1.3rem; } h2{ font-size:1.4rem !important; } p, li{ font-size:.95rem !important; } }
-  </style>
 </head>
 <body>
-  <!-- Top announcement / CTA strip -->
-  <div class="topbar py-2">
-    <div class="container d-flex flex-wrap justify-content-between align-items-center gap-2">
-      <div class="d-flex align-items-center gap-3 small">
-        <span><i class="bi bi-clock"></i> Mon–Sat • 10:00–19:00</span>
-        <span><i class="bi bi-geo-alt"></i> Warje, Pune, Maharashtra</span>
-        <span><i class="bi bi-envelope"></i> sales@ridtechsolution.com</span>
-        <span><i class="bi bi-telephone"></i> +91 98901 23998</span>
-      </div>
-      <a href="contact.html" class="text-decoration-none">Get a Quick Quote</a>
+  <div class="main-bg">
+
+    <!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top shadow-sm" style="background: linear-gradient(90deg, #c6d319, #ff5100);">
+  <div class="container">
+    <!-- Logo & Brand -->
+    <a class="navbar-brand fw-bold d-flex align-items-center" href="#">
+      <img src="images/logo.jpeg" alt="Logo" class="logo" style="border-radius:50%; border:2px solid white; width:45px; height:45px; margin-right:10px;">
+      <span style="color:#fff; font-size:1.3rem;">Rid<span style="color:#222;">Tech</span></span> 
+      <span style="color:#fff; margin-left:4px;">Solution</span>
+    </a>
+
+    <!-- Mobile Toggle -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Navbar Links -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto align-items-center">
+        <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="service.html">Service</a></li>
+
+        <!-- Dropdown -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="industryDropdown" role="button" data-bs-toggle="dropdown">
+            Industry
+          </a>
+          <ul class="dropdown-menu shadow border-0 rounded-3">
+            <li><a class="dropdown-item" href="#">Electronics</a></li>
+            <li><a class="dropdown-item" href="#">Information Technology</a></li>
+            <li><a class="dropdown-item" href="#">Automotive Industry</a></li>
+            <li><a class="dropdown-item" href="#">Pharma Industry</a></li>
+            <li><a class="dropdown-item" href="#">Mechanical Industry</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item"><a class="nav-link" href="#products">Product</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+        <li class="nav-item"><a class="nav-link btn btn-light text-dark px-3 py-1 ms-2 rounded-pill fw-semibold" href="career.html">Careers</a></li>
+      </ul>
     </div>
   </div>
+</nav>
 
-  <!-- Navigation (unchanged style) -->
-  <nav class="navbar navbar-expand-lg navbar-dark sticky-top shadow-sm">
-    <div class="container">
-      <a class="navbar-brand fw-bold d-flex align-items-center" href="#">
-        <img src="images/logo.jpeg" alt="RidTech logo" class="logo" loading="eager">
-        <span style="color:#fff">Rid</span><span style="color:#111">Tech</span>
-        <span class="ms-1" style="color:#fff">Solution</span>
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto align-items-center">
-          <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="service.html">Service</a></li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="industryDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Industry</a>
-            <ul class="dropdown-menu shadow border-0 rounded-3" aria-labelledby="industryDropdown">
-              <li><a class="dropdown-item" href="#industries">Electronics</a></li>
-              <li><a class="dropdown-item" href="#industries">Information Technology</a></li>
-              <li><a class="dropdown-item" href="#industries">Automotive Industry</a></li>
-              <li><a class="dropdown-item" href="#industries">Pharma Industry</a></li>
-              <li><a class="dropdown-item" href="#industries">Mechanical Industry</a></li>
-            </ul>
-          </li>
-          <li class="nav-item"><a class="nav-link" href="#products">Product</a></li>
-          <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
-          <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
-          <li class="nav-item"><a class="nav-link btn btn-light text-dark px-3 py-1 ms-2 rounded-pill fw-semibold" href="career.html">Careers</a></li>
+
+    
+<!-- Hero Section with Text Overlay -->
+<div class="hero position-relative">
+  <img src="images/rid.png" alt="Homepage Banner" class="hero-img">
+
+  <!-- Tagline Block -->
+  <div class="tagline-box">
+    <h1 class="tagline-title">Innovating Electronics & Automation</h1>
+    <p class="tagline-subtitle">We design reliable solutions for industrial automation, instrumentation, and control systems.</p>
+  </div>
+</div>
+
+
+    <!-- Products Section with Horizontal Scroll -->
+    <section id="products" class="products-section py-5">
+      <div class="container">
+        <h2 class="text-center mb-4">Our Products</h2>
+        <div class="scrolling-wrapper d-flex flex-nowrap overflow-auto pb-3">
+          <div class="card me-3" style="min-width: 250px;">
+            <img src="images/LT2.png" class="card-img-top" alt="Product 1">
+            <div class="card-body">
+              <h5 class="card-title">Level Transmitter</h5>
+              <p class="card-text">High-accuracy level sensing for tanks and reservoirs.</p>
+            </div>
+          </div>
+          <div class="card me-3" style="min-width: 250px;">
+            <img src="images/PT.png" class="card-img-top" alt="Product 2">
+            <div class="card-body">
+              <h5 class="card-title">Pressure Transmitter</h5>
+              <p class="card-text">Robust sensors for pressure monitoring in industrial applications.</p>
+            </div>
+          </div>
+          <div class="card me-3" style="min-width: 250px;">
+            <img src="images/TT.png" class="card-img-top" alt="Product 3">
+            <div class="card-body">
+              <h5 class="card-title">Temperature Transmitter</h5>
+              <p class="card-text">Precision temperature sensors for automation and control.</p>
+            </div>
+          </div>
+          <div class="card me-3" style="min-width: 250px;">
+            <img src="images/WFM.png" class="card-img-top" alt="Product 4">
+            <div class="card-body">
+              <h5 class="card-title">Water Flow Meter</h5>
+              <p class="card-text">Digital flow measurement for accurate water monitoring.</p>
+            </div>
+          </div>
+          <div class="card me-3" style="min-width: 250px;">
+            <img src="images/JD.png" class="card-img-top" alt="Product 5">
+            <div class="card-body">
+              <h5 class="card-title">Jumbo Displays</h5>
+              <p class="card-text">Large LED displays for production counters and info boards.</p>
+            </div>
+          </div>
+          <div class="card me-3" style="min-width: 250px;">
+            <img src="images/data logger.png" class="card-img-top" alt="Product 6">
+            <div class="card-body">
+              <h5 class="card-title">Data Logger</h5>
+              <p class="card-text">Advanced recording systems for automation data logging.</p>
+            </div>
+          </div>
+          <div class="card me-3" style="min-width: 250px;">
+            <img src="images/LED_Screen.png" class="card-img-top" alt="Product 7">
+            <div class="card-body">
+              <h5 class="card-title">LED Screen</h5>
+              <p class="card-text">Do advertisement with digital platform</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+   
+   <!-- Solutions Section with Horizontal Scroll -->
+<section class="Solutions py-5">
+  <div class="container">
+   <h2 class="text-center mb-4" style="color: white;">Our Solutions</h2>
+    <div class="scrolling-wrapper d-flex flex-nowrap overflow-auto pb-3">
+      
+      <div class="solution-card me-3">
+        <img src="images/opc.png" alt="Solution 1">
+        <h5 class="card-title mt-3">OPC Solution</h5>
+        <p class="card-text">Standardized industrial communication platform.</p>
+      </div>
+
+        <div class="solution-card me-3">
+        <img src="images/plc.png" alt="Solution 2">
+        <h5 class="card-title mt-3">PLC Solution</h5>
+        <p class="card-text">Standardized industrial Automation platform.</p>
+      </div>
+
+      <div class="solution-card me-3">
+        <img src="images/tracebility system.png" alt="Solution 3">
+        <h5 class="card-title mt-3">Traceability System</h5>
+        <p class="card-text">Track products and components through all stages.</p>
+      </div>
+
+      <div class="solution-card me-3">
+        <img src="images/DAQ.png" alt="Solution 4">
+        <h5 class="card-title mt-3">Data Acquisition</h5>
+        <p class="card-text">Collect and analyze data from physical processes.</p>
+      </div>
+
+      <div class="solution-card me-3">
+        <img src="images/VS.png" alt="Solution 5">
+        <h5 class="card-title mt-3">Vision System</h5>
+        <p class="card-text">Use for getting defect-free and Quality maintain product</p>
+      </div>
+
+      <div class="solution-card me-3">
+        <img src="images/ARVR.png" alt="Solution 6">
+        <h5 class="card-title mt-3">AR/VR Technology</h5>
+        <p class="card-text">Immersive experiences for industrial training and simulation.</p>
+      </div>
+
+      <div class="solution-card me-3">
+        <img src="images/Web.png" alt="Solution 6">
+        <h5 class="card-title mt-3">Web Solutions</h5>
+        <p class="card-text">Custom websites and platforms for automation industries.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ServIndia Section -->
+<section class="py-5" style="background: linear-gradient(135deg, #ff5100, #c6d319); color: white;">
+  <div class="container">
+    <div class="row align-items-center">
+
+      <!-- Text Content -->
+      <div class="col-md-7 text-center text-md-start">
+        <h2 class="mb-4" style="font-size: 2.5rem; font-weight: bold; letter-spacing:0;">
+          <span style="color:#FF9933;">Serv</span><span style="color:white; text-shadow:1px 1px 2px #000;">In</span><span style="color:#138808;">dia</span>
+          – <span style="color:#000;">"We Connect Every Village"</span>
+        </h2>
+
+        <p style="font-size: 1.1rem;">
+          ServIndia is a <strong>digital bridge for rural life</strong>, bringing together people, shops, and businesses on one powerful platform.  
+        </p>
+        <p style="font-size: 1.1rem;">
+          From <strong>farmers, grocery stores, beauty parlours, doctors, medical shops, puncture repair shops, variety outlets, and many more village services</strong> – ServIndia unites them all in one place.  
+        </p>
+        <p style="font-size: 1.1rem;">
+          But it doesn’t stop there! ServIndia also connects <strong>every retail shop, wholesaler, distributor, and company</strong> with <strong>dedicated login sections</strong>, creating a seamless network where everyone can access, share, and grow together.  
+        </p>
+        <p style="font-size: 1.1rem; font-weight: 500;">
+          With ServIndia, every village becomes <strong>stronger, smarter, and better connected</strong> – empowering rural India with complete digital solutions.  
+        </p>
+
+        <!-- Contact CTA -->
+        <div class="mt-4">
+          <h5>📩 Want to be part of this big project?</h5>
+          <a href="mailto:sales@ridtechsolution.com" 
+             class="btn btn-dark btn-lg px-4 py-2 mt-2" 
+             style="border-radius: 30px;">
+             Contact Us Directly
+          </a>
+        </div>
+      </div>
+
+      <!-- Earth Image -->
+      <!-- Earth Image -->
+<div class="col-md-5 text-center mt-4 mt-md-0">
+  <img src="images/earth.png" 
+       alt="Connected Earth" 
+       class="img-fluid" 
+       style="max-height:480px; width:auto;">
+</div>
+
+
+    </div>
+  </div>
+</section>
+
+
+
+
+     <!-- Why Choose Us Section -->
+<section class="py-5" style="background: linear-gradient(135deg, #343a40, #212529); color: white;">
+  <div class="container">
+    <h2 class="text-center mb-5" style="color: #ff5100;">Why Choose <span class="ridtech">Rid</span><span class="solution">Tech</span> Solution</h2>
+    <div class="row text-center">
+      
+      <div class="col-md-4 mb-4">
+        <div class="p-4 rounded shadow-sm h-100" style="background:#444;">
+          <h3 style="font-size:2rem;">⚡</h3>
+          <h5>Expertise in Automation</h5>
+          <p>10 Years of experience delivering reliable automation and industrial control systems.</p>
+        </div>
+      </div>
+      
+      <div class="col-md-4 mb-4">
+        <div class="p-4 rounded shadow-sm h-100" style="background:#444;">
+          <h3 style="font-size:2rem;">⚙️</h3>
+          <h5>Customized Solutions</h5>
+          <p>Tailor-made solutions to meet the unique needs of every industry we serve.</p>
+        </div>
+      </div>
+      
+      <div class="col-md-4 mb-4">
+        <div class="p-4 rounded shadow-sm h-100" style="background:#444;">
+          <h3 style="font-size:2rem;">🌍</h3>
+          <h5>Wide Industry Coverage</h5>
+          <p>Serving Electronics, IT, Automotive, Pharma, and more industrial domains.</p>
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-4">
+        <div class="p-4 rounded shadow-sm h-100" style="background:#444;">
+          <h3 style="font-size:2rem;">🔒</h3>
+          <h5>Quality & Reliability</h5>
+          <p>Our products and services are built to meet high standards with proven durability.</p>
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-4">
+        <div class="p-4 rounded shadow-sm h-100" style="background:#444;">
+          <h3 style="font-size:2rem;">📞</h3>
+          <h5>Strong Support</h5>
+          <p>Dedicated after-sales support and quick assistance for all our clients.</p>
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-4">
+        <div class="p-4 rounded shadow-sm h-100" style="background:#444;">
+          <h3 style="font-size:2rem;">💡</h3>
+          <h5>Innovation Driven</h5>
+          <p>Constantly innovating to provide cutting-edge solutions in automation and electronics.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+    
+<section class="py-5" style="background: linear-gradient(135deg, #f8f9fa, #ffffff);">
+  <div class="container">
+    <h2 class="text-center mb-5" style="font-weight:bold; color:#ff5100; position:relative; display:inline-block;">
+      What Our Clients Say
+      <span style="display:block; width:60px; height:3px; background:#138808; margin:8px auto 0; border-radius:2px;"></span>
+    </h2>
+
+    <div class="row text-center">
+      <div class="col-md-4 mb-4">
+        <div class="p-4 bg-white rounded shadow-sm h-100">
+          <p>"RidTech provided us with top-notch automation solutions. Their support team is always available and helpful!"</p>
+          <h6 class="mt-3">— Riya Sharma, Auto Pharma Pvt. Ltd.</h6>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="p-4 bg-white rounded shadow-sm h-100">
+          <p>"The level of customization they offered was amazing. Our factory systems are more reliable than ever."</p>
+          <h6 class="mt-3">— Pravin Shinde, Mechit India Pvt Ltd</h6>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="p-4 bg-white rounded shadow-sm h-100">
+          <p>"Excellent service and innovative solutions. Highly recommended for any industrial automation needs."</p>
+          <h6 class="mt-3">— Amit Verma, ElectroWorks</h6>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+   <!-- About Section -->
+<section class="py-5" style="background: linear-gradient(135deg, #ffecd2, #fcb69f); border-radius: 12px; margin-bottom: 50px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+  <div class="container">
+    <div class="row align-items-center">
+      
+      <!-- Left: Image -->
+      <div class="col-md-6 text-center mb-4 mb-md-0">
+        <img src="images/Ridtech Banner.png" alt="RidTech Logo" 
+             class="img-fluid rounded shadow" style="max-width: 420px;">
+      </div>
+      
+      <!-- Right: Content -->
+      <div class="col-md-6">
+        <h2 class="mb-4" style="font-weight: bold; color: #333;">
+          About <span style="color:#ff5100;">Rid</span><span style="color:#138808;">Tech</span> Solution
+        </h2>
+        <p style="font-size: 1.1rem; line-height: 1.7; color:#222;">
+          RidTech Solution is a multidisciplinary company offering cutting-edge solutions in automation, electronics, and industrial control.
+        </p>
+        <ul style="list-style: none; padding: 0; font-size: 1rem; line-height: 1.8; color:#111;">
+          <li>✅ <strong>Switchgear Solutions:</strong> Siemens, Eaton, ABB support & integration.</li>
+          <li>✅ <strong>Display Manufacturing:</strong> LED screens, 7-segment, and industrial systems.</li>
+          <li>✅ <strong>Water Level Management:</strong> Flow meters, sensors, monitoring solutions.</li>
+          <li>✅ <strong>Software Solutions:</strong> Automation and hardware integration software.</li>
+        </ul>
+        <p style="font-size: 1.05rem; color:#000; margin-top: 15px;">
+          We deliver reliable and efficient solutions tailored to client needs across industries.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+<!-- Our Partners Section -->
+<section class="py-5" style="background: linear-gradient(135deg, #ff9933, #ffffff, #138808);">
+  <div class="container">
+    <h2 class="text-center mb-5" style="font-weight:bold; color:#000; position:relative; display:inline-block;">
+      Our Partners
+      <span style="display:block; width:60px; height:3px; background:#000; margin:8px auto 0; border-radius:2px;"></span>
+    </h2>
+
+    <!-- Slider Wrapper -->
+    <div class="partners-slider">
+      <div class="partners-track">
+        <div class="partner"><img src="images/ptc.png" alt="Ptrans & Controls"></div>
+        <div class="partner"><img src="images/two8.png" alt="Two8 Digital"></div>
+        <div class="partner"><img src="images/reet.png" alt="Reet Technologies"></div>
+        <div class="partner"><img src="images/ULA.jpg" alt="ULA"></div>
+        <div class="partner"><img src="images/skylogos.png" alt="Iconic Skyline"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-5 text-center" style="background: linear-gradient(135deg,#ff5100,#c6d319); color:white;">
+  <div class="container">
+    <h2>Ready to Transform Your Business with RidTech?</h2>
+    <p>Contact us today to discuss automation, electronics, and software solutions tailored to your needs.</p>
+    <a href="contact.html" class="btn btn-dark btn-lg px-4 py-2 mt-3" style="border-radius:30px;">Get in Touch</a>
+  </div>
+</section>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const track = document.querySelector(".partners-track");
+  const partners = document.querySelectorAll(".partner");
+  const totalPartners = partners.length;
+  let index = 0;
+
+  setInterval(() => {
+    index++;
+    if (index > totalPartners - 4) { 
+      index = 0; // reset when end is reached
+    }
+    track.style.transform = `translateX(-${index * 25}%)`;
+  }, 5000); // move every 5 seconds
+});
+</script>
+
+
+
+   <!-- Footer -->
+<footer style="background: linear-gradient(135deg, #1f1f1f, #343a40); color: #ddd; padding: 50px 0 20px 0;">
+  <div class="container">
+    <div class="row">
+
+      <!-- Company -->
+      <div class="col-md-3 mb-4">
+        <h5 style="color:#ff5100; font-weight:600; margin-bottom:20px;">Company</h5>
+        <ul class="list-unstyled footer-links">
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="career.html">Careers</a></li>
+          <li><a href="#">Events</a></li>
+          <li><a href="#">Partners</a></li>
         </ul>
       </div>
-    </div>
-  </nav>
 
-  <!-- Hero (kept) -->
-  <div class="hero position-relative">
-    <img src="images/rid.png" alt="RidTech electronics & automation banner" class="hero-img" loading="eager" fetchpriority="high">
-    <div class="tagline-box">
-      <h1 class="tagline-title">Innovating Electronics & Automation</h1>
-      <p class="tagline-subtitle">We design reliable solutions for industrial automation, instrumentation, and control systems.</p>
+      <!-- Support -->
+      <div class="col-md-3 mb-4">
+        <h5 style="color:#ff5100; font-weight:600; margin-bottom:20px;">Support</h5>
+        <ul class="list-unstyled footer-links">
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="service.html">Service</a></li>
+          <li><a href="#">Help Center</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+        </ul>
+      </div>
+
+      <!-- Industries -->
+      <div class="col-md-3 mb-4">
+        <h5 style="color:#ff5100; font-weight:600; margin-bottom:20px;">Industries</h5>
+        <ul class="list-unstyled footer-links">
+          <li><a href="#">Manufacturing</a></li>
+          <li><a href="#">Utilities</a></li>
+          <li><a href="#">Automation</a></li>
+          <li><a href="#">Electronics</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div class="col-md-3 mb-4">
+        <h5 style="color:#ff5100; font-weight:600; margin-bottom:20px;">Contact</h5>
+        <p><strong>Email:</strong> sales@ridtechsolution.com</p>
+        <p><strong>Phone:</strong> +91-9890123998</p>
+        <p><strong>Address:</strong> B1-507, Amrutvel Society, Near Chaitanya Hospital, Warje-Pune, Maharashtra, India</p>
+        <p><strong>GST:</strong> 27AZKPD6716F1ZE</p>
+
+         <!-- Social Media Icons -->
+        <div class="d-flex mt-3">
+          <a href="#" class="me-3 text-light"><i class="bi bi-facebook fs-4"></i></a>
+          <a href="#" class="me-3 text-light"><i class="bi bi-linkedin fs-4"></i></a>
+          <a href="#" class="me-3 text-light"><i class="bi bi-twitter fs-4"></i></a>
+          <a href="#" class="text-light"><i class="bi bi-instagram fs-4"></i></a>
+        </div>
+      </div>
+    </div>
+
+     
+
+    <!-- Divider -->
+    <hr style="border-top: 1px solid rgba(255,255,255,0.1);">
+
+    <!-- Bottom Row -->
+    <div class="text-center mt-3">
+      <p style="margin:0; color:#aaa;">&copy; 2025 <span style="color:#ff5100; font-weight:600;">RidTech Solution</span>. All Rights Reserved.</p>
     </div>
   </div>
-
-  <!-- Trust bar: fast facts / badges -->
-  <section class="trustbar py-3">
-    <div class="container d-flex flex-wrap justify-content-center gap-4 text-center">
-      <div class="d-flex align-items-center gap-2"><i class="bi bi-shield-check icon"></i><span>ISO-grade quality mindset</span></div>
-      <div class="d-flex align-items-center gap-2"><i class="bi bi-lightning-charge icon"></i><span>Rapid response & support</span></div>
-      <div class="d-flex align-items-center gap-2"><i class="bi bi-diagram-3 icon"></i><span>PLC • SCADA • IoT • Vision</span></div>
-      <div class="d-flex align-items-center gap-2"><i class="bi bi-cash-coin icon"></i><span>Transparent pricing</span></div>
-    </div>
-  </section>
-
-  <!-- Products (UNCHANGED) -->
-  <section id="products" class="products-section py-5">
-    <div class="container">
-      <h2 class="text-center mb-4 section-title">Our Products</h2>
-      <div class="scrolling-wrapper d-flex flex-nowrap overflow-auto pb-3">
-        <div class="card me-3" style="min-width: 250px;">
-          <img src="images/LT2.png" class="card-img-top" alt="Level Transmitter" loading="lazy">
-          <div class="card-body">
-            <h5 class="card-title">Level Transmitter</h5>
-            <p class="card-text">High-accuracy level sensing for tanks and reservoirs.</p>
-          </div>
-        </div>
-        <div class="card me-3" style="min-width: 250px;">
-          <img src="images/PT.png" class="card-img-top" alt="Pressure Transmitter" loading="lazy">
-          <div class="card-body">
-            <h5 class="card-title">Pressure Transmitter</h5>
-            <p class="card-text">Robust sensors for pressure monitoring in industrial applications.</p>
-          </div>
-        </div>
-        <div class="card me-3" style="min-width: 250px;">
-          <img src="images/TT.png" class="card-img-top" alt="Temperature Transmitter" loading="lazy">
-          <div class="card-body">
-            <h5 class="card-title">Temperature Transmitter</h5>
-            <p class="card-text">Precision temperature sensors for automation and control.</p>
-          </div>
-        </div>
-        <div class="card me-3" style="min-width: 250px;">
-          <img src="images/WFM.png" class="card-img-top" alt="Water Flow Meter" loading="lazy">
-          <div class="card-body">
-            <h5 class="card-title">Water Flow Meter</h5>
-            <p class="card-text">Digital flow measurement for accurate water monitoring.</p>
-          </div>
-        </div>
-        <div class="card me-3" style="min-width: 250px;">
-          <img src="images/JD.png" class="card-img-top" alt="Jumbo Displays" loading="lazy">
-          <div class="card-body">
-            <h5 class="card-title">Jumbo Displays</h5>
-            <p class="card-text">Large LED displays for production counters and info boards.</p>
-          </div>
-        </div>
-        <div class="card me-3" style="min-width: 250px;">
-          <img src="images/data logger.png" class="card-img-top" alt="Data Logger" loading="lazy">
-          <div class="card-body">
-            <h5 class="card-title">Data Logger</h5>
-            <p class="card-text">Advanced recording systems for automation data logging.</p>
-          </div>
-        </div>
-        <div class="card me-3" style="min-width: 250px;">
-          <img src="images/LED_Screen.png" class="card-img-top" alt="LED Screen" loading="lazy">
-          <div class="card-body">
-            <h5 class="card-title">LED Screen</h5>
-            <p class="card-text">Do advertisement with digital platform</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Impact Metrics (animated counters) -->
-  <section class="metrics py-5">
-    <div class="container">
-      <div class="row text-center g-4">
-        <div class="col-6 col-md-3">
-          <div class="metric">
-            <h3 class="count" data-target="10">0</h3>
-            <p>Years Experience</p>
-          </div>
-        </div>
-        <div class="col-6 col-md-3">
-          <div class="metric">
-            <h3 class="count" data-target="120">0</h3>
-            <p>Projects Delivered</p>
-          </div>
-        </div>
-        <div class="col-6 col-md-3">
-          <div class="metric">
-            <h3 class="count" data-target="35">0</h3>
-            <p>Industries Served</p>
-          </div>
-        </div>
-        <div class="col-6 col-md-3">
-          <div class="metric">
-            <h3 class="count" data-target="98">0</h3>
-            <p>% On‑time Delivery</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Solutions (UNCHANGED) -->
-  <section class="Solutions py-5">
-    <div class="container">
-      <h2 class="text-center mb-4" style="color: white;">Our Solutions</h2>
-      <div class="scrolling-wrapper d-flex flex-nowrap overflow-auto pb-3">
-        <div class="solution-card me-3">
-          <img src="images/opc.png" alt="OPC Solution">
-          <h5 class="card-title mt-3">OPC Solution</h5>
-          <p class="card-text">Standardized industrial communication platform.</p>
-        </div>
-        <div class="solution-card me-3">
-          <img src="images/plc.png" alt="PLC Solution">
-          <h5 class="card-title mt-3">PLC Solution</h5>
-          <p class="card-text">Standardized industrial Automation platform.</p>
-        </div>
-        <div class="solution-card me-3">
-          <img src="images/tracebility system.png" alt="Traceability System">
-          <h5 class="card-title mt-3">Traceability System</h5>
-          <p class="card-text">Track products and components through all stages.</p>
-        </div>
-        <div class="solution-card me-3">
-          <img src="images/DAQ.png" alt="Data Acquisition">
-          <h5 class="card-title mt-3">Data Acquisition</h5>
-          <p class="card-text">Collect and analyze data from physical processes.</p>
-        </div>
-        <div class="solution-card me-3">
-          <img src="images/VS.png" alt="Vision System">
-          <h5 class="card-title mt-3">Vision System</h5>
-          <p class="card-text">Use for getting defect-free and Quality maintain product</p>
-        </div>
-        <div class="solution-card me-3">
-          <img src="images/ARVR.png" alt="AR/VR Technology">
-          <h5 class="card-title mt-3">AR/VR Technology</h5>
-          <p class="card-text">Immersive experiences for industrial training and simulation.</p>
-        </div>
-        <div class="solution-card me-3">
-          <img src="images/Web.png" alt="Web Solutions">
-          <h5 class="card-title mt-3">Web Solutions</h5>
-          <p class="card-text">Custom websites and platforms for automation industries.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Industries We Serve (new) -->
-  <section id="industries" class="py-5" style="background:var(--soft)">
-    <div class="container">
-      <h2 class="text-center section-title mb-4">Industries We Serve</h2>
-      <span class="divider"></span>
-      <div class="row g-3 mt-2">
-        <div class="col-md-6 col-lg-4">
-          <div class="industry-card">
-            <i class="bi bi-cpu"></i>
-            <div>
-              <h6 class="mb-1">Electronics Manufacturing</h6>
-              <p class="mb-0 text-muted">Vision-based inspection, traceability, process counters, SMT line monitoring.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4">
-          <div class="industry-card">
-            <i class="bi bi-gear-wide-connected"></i>
-            <div>
-              <h6 class="mb-1">Automotive & CNC</h6>
-              <p class="mb-0 text-muted">PLC/SCADA integration, production dashboards, energy & utility monitoring.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4">
-          <div class="industry-card">
-            <i class="bi bi-capsule-pill"></i>
-            <div>
-              <h6 class="mb-1">Pharma</h6>
-              <p class="mb-0 text-muted">Clean-room logging, audit trails, compliance-friendly process data capture.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4">
-          <div class="industry-card">
-            <i class="bi bi-building"></i>
-            <div>
-              <h6 class="mb-1">Infrastructure & Utilities</h6>
-              <p class="mb-0 text-muted">Water flow metering, pump automation, remote telemetry, LED info systems.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4">
-          <div class="industry-card">
-            <i class="bi bi-box-seam"></i>
-            <div>
-              <h6 class="mb-1">Food & Packaging</h6>
-              <p class="mb-0 text-muted">Bottle defect detection, fill-level QC, track & trace, OEE dashboards.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4">
-          <div class="industry-card">
-            <i class="bi bi-lightbulb"></i>
-            <div>
-              <h6 class="mb-1">Smart Displays & Media</h6>
-              <p class="mb-0 text-muted">Jumbo displays, LED walls, campaign scheduling for public bodies.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Case Studies (new) -->
-  <section class="py-5">
-    <div class="container">
-      <h2 class="text-center section-title mb-4">Flagship Projects</h2>
-      <span class="divider"></span>
-      <div id="caseCarousel" class="carousel slide mt-4" data-bs-ride="carousel">
-        <div class="carousel-inner rounded shadow">
-          <div class="carousel-item active">
-            <img src="images/case-vision.jpg" class="d-block w-100" alt="Vision system case study" loading="lazy">
-            <div class="carousel-caption case-caption rounded p-3 text-start">
-              <h5 class="mb-1">Vision QC for Bottle Line</h5>
-              <p class="mb-0 small">Detected cap/label/fill defects with 99.2% accuracy; reduced rejects by 38% within 60 days.</p>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img src="images/case-water.jpg" class="d-block w-100" alt="Smart water flow metering" loading="lazy">
-            <div class="carousel-caption case-caption rounded p-3 text-start">
-              <h5 class="mb-1">Smart Water Metering</h5>
-              <p class="mb-0 small">4–20mA + IoT gateway for colonies; real-time leak alerts & usage analytics.</p>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img src="images/case-display.jpg" class="d-block w-100" alt="LED display deployment" loading="lazy">
-            <div class="carousel-caption case-caption rounded p-3 text-start">
-              <h5 class="mb-1">Civic LED Information Walls</h5>
-              <p class="mb-0 small">Outdoor LED with cloud scheduler for Nagar Parishad notices & campaigns.</p>
-            </div>
-          </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#caseCarousel" data-bs-slide="prev" aria-label="Previous">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#caseCarousel" data-bs-slide="next" aria-label="Next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        </button>
-      </div>
-    </div>
-  </section>
-
-  <!-- ServIndia (kept) -->
-  <section class="py-5" style="background: linear-gradient(135deg, #ff5100, #c6d319); color: white;">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-md-7 text-center text-md-start">
-          <h2 class="mb-4" style="font-size: 2.5rem; font-weight: bold; letter-spacing:0;">
-            <span style="color:#FF9933;">Serv</span><span style="color:white; text-shadow:1px 1px 2px #000;">In</span><span style="color:#138808;">dia</span>
-            – <span style="color:#000;">"We Connect Every Village"</span>
-          </h2>
-          <p style="font-size: 1.1rem;">ServIndia is a <strong>digital bridge for rural life</strong>, bringing together people, shops, and businesses on one powerful platform.</p>
-          <p style="font-size: 1.1rem;">From <strong>farmers, grocery stores, beauty parlours, doctors, medical shops, puncture repair shops, variety outlets, and many more village services</strong> – ServIndia unites them all in one place.</p>
-          <p style="font-size: 1.1rem;">It also connects <strong>retailers, wholesalers, distributors, and companies</strong> with <strong>dedicated logins</strong>, creating a seamless network.</p>
-          <div class="mt-4">
-            <h5>📩 Want to be part of this big project?</h5>
-            <a href="mailto:sales@ridtechsolution.com" class="btn btn-dark btn-lg px-4 py-2 mt-2" style="border-radius:30px;">Contact Us Directly</a>
-          </div>
-        </div>
-        <div class="col-md-5 text-center mt-4 mt-md-0">
-          <img src="images/earth.png" alt="ServIndia connected earth" class="img-fluid" style="max-height:480px; width:auto;">
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Why Choose Us (kept content, refreshed styling) -->
-  <section class="py-5" style="background: linear-gradient(135deg, #343a40, #212529); color: white;">
-    <div class="container">
-      <h2 class="text-center mb-5" style="color: var(--brand-orange);">Why Choose RidTech Solution</h2>
-      <div class="row text-center">
-        <div class="col-md-4 mb-4"><div class="p-4 rounded shadow-sm h-100" style="background:#444;"><h3 style="font-size:2rem;">⚡</h3><h5>Expertise in Automation</h5><p>10 Years of experience delivering reliable automation and industrial control systems.</p></div></div>
-        <div class="col-md-4 mb-4"><div class="p-4 rounded shadow-sm h-100" style="background:#444;"><h3 style="font-size:2rem;">⚙️</h3><h5>Customized Solutions</h5><p>Tailor-made solutions to meet the unique needs of every industry we serve.</p></div></div>
-        <div class="col-md-4 mb-4"><div class="p-4 rounded shadow-sm h-100" style="background:#444;"><h3 style="font-size:2rem;">🌍</h3><h5>Wide Industry Coverage</h5><p>Serving Electronics, IT, Automotive, Pharma, and more industrial domains.</p></div></div>
-        <div class="col-md-4 mb-4"><div class="p-4 rounded shadow-sm h-100" style="background:#444;"><h3 style="font-size:2rem;">🔒</h3><h5>Quality & Reliability</h5><p>Our products and services are built to meet high standards with proven durability.</p></div></div>
-        <div class="col-md-4 mb-4"><div class="p-4 rounded shadow-sm h-100" style="background:#444;"><h3 style="font-size:2rem;">📞</h3><h5>Strong Support</h5><p>Dedicated after-sales support and quick assistance for all our clients.</p></div></div>
-        <div class="col-md-4 mb-4"><div class="p-4 rounded shadow-sm h-100" style="background:#444;"><h3 style="font-size:2rem;">💡</h3><h5>Innovation Driven</h5><p>Constantly innovating to provide cutting-edge solutions in automation and electronics.</p></div></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Process Timeline (new) -->
-  <section class="py-5" style="background:#fff">
-    <div class="container">
-      <h2 class="text-center section-title mb-4">How We Deliver — From Idea to Uptime</h2>
-      <span class="divider"></span>
-      <div class="row g-4 mt-2 timeline">
-        <div class="col-md-6 tleft">
-          <div class="tstep">
-            <div class="tbadge">1</div>
-            <h6>Requirement & Site Study</h6>
-            <p class="mb-0 text-muted">Workshops, P&IDs, IO lists, success criteria — we align on the problem & ROI.</p>
-          </div>
-        </div>
-        <div class="col-md-6 tright">
-          <div class="tstep">
-            <div class="tbadge">2</div>
-            <h6>Design & BOM</h6>
-            <p class="mb-0 text-muted">Panel GA, wiring, PLC tags, camera optics, field devices, network & security.</p>
-          </div>
-        </div>
-        <div class="col-md-6 tleft">
-          <div class="tstep">
-            <div class="tbadge">3</div>
-            <h6>Build & Program</h6>
-            <p class="mb-0 text-muted">Panel build, PLC/SCADA code, ML models (if any), dashboards & APIs.</p>
-          </div>
-        </div>
-        <div class="col-md-6 tright">
-          <div class="tstep">
-            <div class="tbadge">4</div>
-            <h6>FAT/SAT & Training</h6>
-            <p class="mb-0 text-muted">Test cases, safety interlocks, documentation, on‑site commissioning.</p>
-          </div>
-        </div>
-        <div class="col-md-6 tleft">
-          <div class="tstep">
-            <div class="tbadge">5</div>
-            <h6>Handover & Support</h6>
-            <p class="mb-0 text-muted">SLA, remote support, spares & upgrades — keep your line running.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Testimonials (kept) -->
-  <section class="py-5" style="background: linear-gradient(135deg, #f8f9fa, #ffffff);">
-    <div class="container">
-      <h2 class="text-center mb-5" style="font-weight:bold; color:#ff5100; position:relative; display:inline-block;">What Our Clients Say<span class="divider" style="background:#138808"></span></h2>
-      <div class="row text-center">
-        <div class="col-md-4 mb-4"><div class="p-4 bg-white rounded shadow-sm h-100"><p>"RidTech provided us with top-notch automation solutions. Their support team is always available and helpful!"</p><h6 class="mt-3">— Riya Sharma, Auto Pharma Pvt. Ltd.</h6></div></div>
-        <div class="col-md-4 mb-4"><div class="p-4 bg-white rounded shadow-sm h-100"><p>"The level of customization they offered was amazing. Our factory systems are more reliable than ever."</p><h6 class="mt-3">— Pravin Shinde, Mechit India Pvt Ltd</h6></div></div>
-        <div class="col-md-4 mb-4"><div class="p-4 bg-white rounded shadow-sm h-100"><p>"Excellent service and innovative solutions. Highly recommended for any industrial automation needs."</p><h6 class="mt-3">— Amit Verma, ElectroWorks</h6></div></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- About (kept) -->
-  <section class="py-5" style="background: linear-gradient(135deg, #ffecd2, #fcb69f); border-radius: 12px; margin-bottom: 50px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-md-6 text-center mb-4 mb-md-0"><img src="images/Ridtech Banner.png" alt="About RidTech" class="img-fluid rounded shadow" style="max-width: 420px;"></div>
-        <div class="col-md-6">
-          <h2 class="mb-4" style="font-weight: bold; color: #333;">About <span style="color:#ff5100;">Rid</span><span style="color:#138808;">Tech</span> Solution</h2>
-          <p style="font-size: 1.1rem; line-height: 1.7; color:#222;">RidTech Solution is a multidisciplinary company offering cutting-edge solutions in automation, electronics, and industrial control.</p>
-          <ul style="list-style:none; padding:0; font-size:1rem; line-height:1.8; color:#111;">
-            <li>✅ <strong>Switchgear Solutions:</strong> Siemens, Eaton, ABB support & integration.</li>
-            <li>✅ <strong>Display Manufacturing:</strong> LED screens, 7-segment, and industrial systems.</li>
-            <li>✅ <strong>Water Level Management:</strong> Flow meters, sensors, monitoring solutions.</li>
-            <li>✅ <strong>Software Solutions:</strong> Automation and hardware integration software.</li>
-          </ul>
-          <p class="mb-0" style="font-size: 1.05rem; color:#000;">We deliver reliable and efficient solutions tailored to client needs across industries.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Certifications & Compliance (new) -->
-  <section class="py-5" style="background:#fafafa;">
-    <div class="container">
-      <h2 class="text-center section-title mb-4">Quality • Safety • Compliance</h2>
-      <span class="divider"></span>
-      <div class="row g-3 mt-2">
-        <div class="col-md-4"><div class="card-soft p-4 h-100"><h6 class="mb-2"><i class="bi bi-patch-check-fill me-1"></i> Standards We Follow</h6><p class="mb-0 text-muted">Best practices aligned to IEC for panels, GMP-friendly logging for pharma, and secure-by-design networks for OT/IT.</p></div></div>
-        <div class="col-md-4"><div class="card-soft p-4 h-100"><h6 class="mb-2"><i class="bi bi-shield-lock-fill me-1"></i> Data & Network</h6><p class="mb-0 text-muted">Audit trails, role-based access, encrypted telemetry for cloud dashboards & remote support.</p></div></div>
-        <div class="col-md-4"><div class="card-soft p-4 h-100"><h6 class="mb-2"><i class="bi bi-people-fill me-1"></i> Training & Handover</h6><p class="mb-0 text-muted">Operator SOPs, maintenance checklists, and spare strategies packaged with every deployment.</p></div></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Partners (UNCHANGED) -->
-  <section class="py-5" style="background: linear-gradient(135deg, #ff9933, #ffffff, #138808);">
-    <div class="container">
-      <h2 class="text-center mb-5" style="font-weight:bold; color:#000; position:relative; display:inline-block;">Our Partners<span class="divider" style="background:#000"></span></h2>
-      <div class="partners-slider">
-        <div class="partners-track">
-          <div class="partner"><img src="images/ptc.png" alt="Ptrans & Controls"></div>
-          <div class="partner"><img src="images/two8.png" alt="Two8 Digital"></div>
-          <div class="partner"><img src="images/reet.png" alt="Reet Technologies"></div>
-          <div class="partner"><img src="images/ULA.jpg" alt="ULA"></div>
-          <div class="partner"><img src="images/skylogos.png" alt="Iconic Skyline"></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ (new) -->
-  <section class="faq py-5">
-    <div class="container">
-      <h2 class="text-center section-title mb-4">FAQ — Quick Answers</h2>
-      <span class="divider"></span>
-      <div class="accordion mt-4" id="faqAcc">
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="q1"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#a1" aria-expanded="true" aria-controls="a1">How fast can you execute a small PLC upgrade?</button></h2>
-          <div id="a1" class="accordion-collapse collapse show" data-bs-parent="#faqAcc"><div class="accordion-body">Minor upgrades typically take <strong>1–2 weeks</strong> including testing — subject to site readiness and spares.</div></div>
-        </div>
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="q2"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a2" aria-controls="a2">Do you provide remote dashboards?</button></h2>
-          <div id="a2" class="accordion-collapse collapse" data-bs-parent="#faqAcc"><div class="accordion-body">Yes — we offer secure cloud dashboards for utilities, energy, production counters and predictive alerts.</div></div>
-        </div>
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="q3"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a3" aria-controls="a3">Can you integrate with existing ERP/MES?</button></h2>
-          <div id="a3" class="accordion-collapse collapse" data-bs-parent="#faqAcc"><div class="accordion-body">We integrate via REST/OPC UA/MQTT, and provide data mapping plus validation before go‑live.</div></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA band -->
-  <section class="py-5 text-center" style="background: linear-gradient(135deg,#ff5100,#c6d319); color:white;">
-    <div class="container">
-      <h2>Ready to Transform Your Business with RidTech?</h2>
-      <p>Contact us today to discuss automation, electronics, and software solutions tailored to your needs.</p>
-      <a href="contact.html" class="btn btn-dark btn-lg px-4 py-2 mt-3" style="border-radius:30px;">Get in Touch</a>
-    </div>
-  </section>
-
-  <!-- Footer (kept) -->
-  <footer style="padding: 50px 0 20px 0;">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-3 mb-4"><h5 style="color:#ff5100; font-weight:600; margin-bottom:20px;">Company</h5><ul class="list-unstyled footer-links"><li><a href="about.html">About Us</a></li><li><a href="career.html">Careers</a></li><li><a href="#">Events</a></li><li><a href="#">Partners</a></li></ul></div>
-        <div class="col-md-3 mb-4"><h5 style="color:#ff5100; font-weight:600; margin-bottom:20px;">Support</h5><ul class="list-unstyled footer-links"><li><a href="contact.html">Contact Us</a></li><li><a href="service.html">Service</a></li><li><a href="#">Help Center</a></li><li><a href="#">Privacy Policy</a></li></ul></div>
-        <div class="col-md-3 mb-4"><h5 style="color:#ff5100; font-weight:600; margin-bottom:20px;">Industries</h5><ul class="list-unstyled footer-links"><li><a href="#industries">Manufacturing</a></li><li><a href="#industries">Utilities</a></li><li><a href="#industries">Automation</a></li><li><a href="#industries">Electronics</a></li></ul></div>
-        <div class="col-md-3 mb-4">
-          <h5 style="color:#ff5100; font-weight:600; margin-bottom:20px;">Contact</h5>
-          <p><strong>Email:</strong> sales@ridtechsolution.com</p>
-          <p><strong>Phone:</strong> +91-9890123998</p>
-          <p><strong>Address:</strong> B1-507, Amrutvel Society, Near Chaitanya Hospital, Warje-Pune, Maharashtra, India</p>
-          <p><strong>GST:</strong> 27AZKPD6716F1ZE</p>
-          <div class="d-flex mt-3"><a href="#" class="me-3 text-light"><i class="bi bi-facebook fs-4"></i></a><a href="#" class="me-3 text-light"><i class="bi bi-linkedin fs-4"></i></a><a href="#" class="me-3 text-light"><i class="bi bi-twitter fs-4"></i></a><a href="#" class="text-light"><i class="bi bi-instagram fs-4"></i></a></div>
-        </div>
-      </div>
-      <hr style="border-top: 1px solid rgba(255,255,255,0.1);">
-      <div class="text-center mt-3"><p style="margin:0; color:#aaa;">&copy; 2025 <span style="color:#ff5100; font-weight:600;">RidTech Solution</span>. All Rights Reserved.</p></div>
-    </div>
-  </footer>
-
-  <!-- Floating action buttons (WhatsApp / Call) -->
-  <div class="fab fab-bottom">
-    <a href="https://wa.me/919890123998" target="_blank" rel="noopener" class="btn btn-success d-flex align-items-center gap-2"><i class="bi bi-whatsapp"></i><span>WhatsApp</span></a>
-    <a href="tel:+919890123998" class="btn btn-primary d-flex align-items-center gap-2"><i class="bi bi-telephone"></i><span>Call</span></a>
+</footer>
   </div>
 
-  <!-- Org schema for SEO -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "RidTech Solution",
-    "url": "https://www.ridtechsolution.com/",
-    "logo": "https://www.ridtechsolution.com/images/logo.jpeg",
-    "contactPoint": [{
-      "@type": "ContactPoint",
-      "telephone": "+91-9890123998",
-      "contactType": "customer service",
-      "areaServed": "IN",
-      "availableLanguage": ["en", "mr"]
-    }],
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "B1-507, Amrutvel Society, Near Chaitanya Hospital, Warje",
-      "addressLocality": "Pune",
-      "addressRegion": "Maharashtra",
-      "postalCode": "411058",
-      "addressCountry": "IN"
-    }
-  }
-  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+KqHdX+6Y5eIc4eXj8D92t47D3yJk" crossorigin="anonymous"></script>
 
-  <!-- Minimal JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-  <script>
-    // Partners slider (kept logic)
-    document.addEventListener("DOMContentLoaded", function(){
-      const track = document.querySelector(".partners-track");
-      if(track){
-        const partners = document.querySelectorAll(".partner");
-        const totalPartners = partners.length; let index = 0;
-        setInterval(()=>{ index++; if(index > totalPartners - 4){ index = 0;} track.style.transform = `translateX(-${index * 25}%)`; }, 5000);
-      }
-    });
 
-    // Counter animation when visible
-    const counters = document.querySelectorAll('.count');
-    const io = new IntersectionObserver((entries)=>{
-      entries.forEach(entry=>{
-        if(entry.isIntersecting){
-          const el = entry.target; const target = +el.getAttribute('data-target'); let current = 0; const step = Math.max(1, Math.floor(target/60));
-          const tick = ()=>{ current += step; if(current >= target){ el.textContent = target; } else { el.textContent = current; requestAnimationFrame(tick);} };
-          tick(); io.unobserve(el);
-        }
-      });
-    }, { threshold:.4 });
-    counters.forEach(c=>io.observe(c));
-  </script>
 </body>
 </html>
