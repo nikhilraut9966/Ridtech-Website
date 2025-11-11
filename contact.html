@@ -42,7 +42,7 @@
 .hero h1{ font-weight:800; letter-spacing:.5px; }
 .hero p{ opacity:.95; max-width:760px; margin:10px auto 0; }
 
-/* ---------- CONTACT CARDS ---------- */
+/* ---------- CONTACT CARDS / GENERAL SECTIONS ---------- */
 .section-pad { padding: 60px 0; }
 .contact-card{
   background:#fff; border:1px solid #eee; border-radius:16px; padding:22px;
@@ -189,138 +189,7 @@ footer .text-center p{ margin:0; color:#aaa; font-size:.9rem; }
     </div>
   </section>
 
-  <!-- QUICK CONTACT CARDS -->
-  <section class="section-pad">
-    <div class="container">
-      <div class="row g-4">
-        <div class="col-md-4">
-          <div class="contact-card h-100">
-            <div class="d-flex align-items-center mb-3 gap-3">
-              <div class="icon"><i class="bi bi-telephone-outbound"></i></div>
-              <div>
-                <h5 class="mb-0">Call Sales</h5>
-                <small class="text-muted">Mon–Sat, 10:00–19:00</small>
-              </div>
-            </div>
-            <p class="mb-1"><strong>+91-9890123998</strong></p>
-            <a class="btn btn-sm btn-gradient mt-2" href="tel:+919890123998"><i class="bi bi-telephone me-1"></i>Call Now</a>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="contact-card h-100">
-            <div class="d-flex align-items-center mb-3 gap-3">
-              <div class="icon"><i class="bi bi-envelope-paper"></i></div>
-              <div>
-                <h5 class="mb-0">Email Us</h5>
-                <small class="text-muted">Sales & Support</small>
-              </div>
-            </div>
-            <p class="mb-1"><strong>sales@ridtechsolution.com</strong></p>
-            <a class="btn btn-sm btn-gradient mt-2" href="mailto:sales@ridtechsolution.com?subject=Enquiry%20from%20Website"><i class="bi bi-send me-1"></i>Send Email</a>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="contact-card h-100">
-            <div class="d-flex align-items-center mb-3 gap-3">
-              <div class="icon"><i class="bi bi-geo-alt"></i></div>
-              <div>
-                <h5 class="mb-0">Visit Office</h5>
-                <small class="text-muted">Warje, Pune</small>
-              </div>
-            </div>
-            <p class="mb-1">B1-507, Amrutvel Society, Near Chaitanya Hospital, Warje-Pune, Maharashtra, India</p>
-            <a class="btn btn-sm btn-gradient mt-2" href="#map"><i class="bi bi-map me-1"></i>Open Map</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- WA + QR -->
-      <div class="row g-4 mt-4 align-items-center">
-        <div class="col-md-6">
-          <div class="qr-box d-flex align-items-center gap-3">
-            <img src="images/QR.jpg" alt="WhatsApp QR" width="86" height="86" loading="lazy">
-            <div>
-              <h6 class="mb-1">Chat on WhatsApp</h6>
-              <p class="mb-2 small text-muted">Scan QR or click to start a conversation with our team.</p>
-              <a class="btn btn-sm btn-success" target="_blank" rel="noopener" href="https://wa.me/919890123998?text=Hello%20RidTech%20Solution%2C%20I%27d%20like%20to%20know%20more%20about%20your%20automation%20solutions."><i class="bi bi-whatsapp me-1"></i>Start Chat</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 text-md-end">
-          <img src="images/contact-side.jpg" alt="RidTech Automation" class="img-fluid rounded-4 shadow-sm" loading="lazy">
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FORM + MAP -->
-  <section class="section-pad pt-0">
-    <div class="container">
-      <div class="row g-4">
-        <div class="col-lg-6">
-          <div class="form-wrap">
-            <h4 class="mb-3">Send us a message</h4>
-            <form class="needs-validation" novalidate onsubmit="event.preventDefault(); this.reset(); alert('Thank you! We will contact you shortly.');">
-              <div class="row g-3">
-                <div class="col-md-6">
-                  <label class="form-label">Full Name</label>
-                  <input type="text" class="form-control" required placeholder="Your Name">
-                  <div class="invalid-feedback">Please enter your name.</div>
-                </div>
-                <div class="col-md-6">
-                  <label class="form-label">Email</label>
-                  <input type="email" class="form-control" required placeholder="you@company.com">
-                  <div class="invalid-feedback">Please provide a valid email.</div>
-                </div>
-                <div class="col-md-6">
-                  <label class="form-label">Phone</label>
-                  <input type="tel" class="form-control" required placeholder="+91-">
-                  <div class="invalid-feedback">Please enter phone number.</div>
-                </div>
-                <div class="col-md-6">
-                  <label class="form-label">Service Interested</label>
-                  <select class="form-select" required>
-                    <option value="">Select…</option>
-                    <option>PLC Panel & Programming</option>
-                    <option>SCADA / HMI Dashboard</option>
-                    <option>Vision System / DAQ</option>
-                    <option>LED Displays / Jumbo Screens</option>
-                    <option>Other</option>
-                  </select>
-                  <div class="invalid-feedback">Please select a service.</div>
-                </div>
-                <div class="col-12">
-                  <label class="form-label">Message</label>
-                  <textarea class="form-control" rows="4" placeholder="Project brief, timeline, budget…"></textarea>
-                </div>
-                <div class="col-12 d-flex align-items-center gap-3">
-                  <button class="btn btn-gradient px-4" type="submit">Submit</button>
-                  <small class="text-muted">By submitting, you agree to be contacted by our team.</small>
-                </div>
-              </div>
-            </form>
-          </div>
-        </div>
-
-        <div class="col-lg-6" id="map">
-          <div class="map-wrap h-100">
-            <iframe title="RidTech Solution Location" src="https://www.google.com/maps?q=Amrutvel%20Society%20Warje%20Pune&output=embed" width="100%" height="420" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-          </div>
-          <ul class="hours list-unstyled mt-3">
-            <li><i class="bi bi-clock me-1 text-warning"></i> <strong>Business Hours:</strong> Mon–Sat, 10:00 AM – 7:00 PM</li>
-            <li><i class="bi bi-tools me-1 text-warning"></i> <strong>Support:</strong> 24×6 for AMC/critical issues</li>
-          </ul>
-          <div class="d-flex gap-3 mt-2">
-            <a class="text-decoration-none" target="_blank" rel="noopener" href="https://www.linkedin.com/company/ridtech-solution"><i class="bi bi-linkedin fs-4"></i></a>
-            <a class="text-decoration-none" href="mailto:sales@ridtechsolution.com"><i class="bi bi-envelope-open fs-4"></i></a>
-            <a class="text-decoration-none" href="tel:+919890123998"><i class="bi bi-telephone fs-4"></i></a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PRE-FOOTER SHOWCASE (adds gap above footer) -->
+  <!-- PRE-FOOTER SHOWCASE (right after hero) -->
   <section class="pre-footer">
     <div class="container">
       <div class="row g-4 align-items-center">
@@ -385,6 +254,137 @@ footer .text-center p{ margin:0; color:#aaa; font-size:.9rem; }
           <div class="d-flex flex-wrap gap-2 mt-3">
             <a class="btn btn-gradient" href="mailto:sales@ridtechsolution.com">Get a Quote</a>
             <a class="btn btn-outline-secondary" href="tel:+919890123998"><i class="bi bi-telephone me-1"></i>Call Sales</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT CARDS (moved below pre-footer) -->
+  <section class="section-pad">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="contact-card h-100">
+            <div class="d-flex align-items-center mb-3 gap-3">
+              <div class="icon"><i class="bi bi-telephone-outbound"></i></div>
+              <div>
+                <h5 class="mb-0">Call Sales</h5>
+                <small class="text-muted">Mon–Sat, 10:00–19:00</small>
+              </div>
+            </div>
+            <p class="mb-1"><strong>+91-9890123998</strong></p>
+            <a class="btn btn-sm btn-gradient mt-2" href="tel:+919890123998"><i class="bi bi-telephone me-1"></i>Call Now</a>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="contact-card h-100">
+            <div class="d-flex align-items-center mb-3 gap-3">
+              <div class="icon"><i class="bi bi-envelope-paper"></i></div>
+              <div>
+                <h5 class="mb-0">Email Us</h5>
+                <small class="text-muted">Sales & Support</small>
+              </div>
+            </div>
+            <p class="mb-1"><strong>sales@ridtechsolution.com</strong></p>
+            <a class="btn btn-sm btn-gradient mt-2" href="mailto:sales@ridtechsolution.com?subject=Enquiry%20from%20Website"><i class="bi bi-send me-1"></i>Send Email</a>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="contact-card h-100">
+            <div class="d-flex align-items-center mb-3 gap-3">
+              <div class="icon"><i class="bi bi-geo-alt"></i></div>
+              <div>
+                <h5 class="mb-0">Visit Office</h5>
+                <small class="text-muted">Warje, Pune</small>
+              </div>
+            </div>
+            <p class="mb-1">B1-507, Amrutvel Society, Near Chaitanya Hospital, Warje-Pune, Maharashtra, India</p>
+            <a class="btn btn-sm btn-gradient mt-2" href="#map"><i class="bi bi-map me-1"></i>Open Map</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- WA + QR -->
+      <div class="row g-4 mt-4 align-items-center">
+        <div class="col-md-6">
+          <div class="qr-box d-flex align-items-center gap-3">
+            <img src="images/QR.jpg" alt="WhatsApp QR" width="86" height="86" loading="lazy">
+            <div>
+              <h6 class="mb-1">Chat on WhatsApp</h6>
+              <p class="mb-2 small text-muted">Scan QR or click to start a conversation with our team.</p>
+              <a class="btn btn-sm btn-success" target="_blank" rel="noopener" href="https://wa.me/919890123998?text=Hello%20RidTech%20Solution%2C%20I%27d%20like%20to%20know%20more%20about%20your%20automation%20solutions."><i class="bi bi-whatsapp me-1"></i>Start Chat</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 text-md-end">
+          <img src="images/contact-side.jpg" alt="RidTech Automation" class="img-fluid rounded-4 shadow-sm" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FORM + MAP (now after contact cards) -->
+  <section class="section-pad pt-0">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-6">
+          <div class="form-wrap">
+            <h4 class="mb-3">Send us a message</h4>
+            <form class="needs-validation" novalidate onsubmit="event.preventDefault(); this.reset(); alert('Thank you! We will contact you shortly.');">
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label class="form-label">Full Name</label>
+                  <input type="text" class="form-control" required placeholder="Your Name">
+                  <div class="invalid-feedback">Please enter your name.</div>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Email</label>
+                  <input type="email" class="form-control" required placeholder="you@company.com">
+                  <div class="invalid-feedback">Please provide a valid email.</div>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Phone</label>
+                  <input type="tel" class="form-control" required placeholder="+91-">
+                  <div class="invalid-feedback">Please enter phone number.</div>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Service Interested</label>
+                  <select class="form-select" required>
+                    <option value="">Select…</option>
+                    <option>PLC Panel & Programming</option>
+                    <option>SCADA / HMI Dashboard</option>
+                    <option>Vision System / DAQ</option>
+                    <option>LED Displays / Jumbo Screens</option>
+                    <option>Other</option>
+                  </select>
+                  <div class="invalid-feedback">Please select a service.</div>
+                </div>
+                <div class="col-12">
+                  <label class="form-label">Message</label>
+                  <textarea class="form-control" rows="4" placeholder="Project brief, timeline, budget…"></textarea>
+                </div>
+                <div class="col-12 d-flex align-items-center gap-3">
+                  <button class="btn btn-gradient px-4" type="submit">Submit</button>
+                  <small class="text-muted">By submitting, you agree to be contacted by our team.</small>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="col-lg-6" id="map">
+          <div class="map-wrap h-100">
+            <iframe title="RidTech Solution Location" src="https://www.google.com/maps?q=Amrutvel%20Society%20Warje%20Pune&output=embed" width="100%" height="420" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+          <ul class="hours list-unstyled mt-3">
+            <li><i class="bi bi-clock me-1 text-warning"></i> <strong>Business Hours:</strong> Mon–Sat, 10:00 AM – 7:00 PM</li>
+            <li><i class="bi bi-tools me-1 text-warning"></i> <strong>Support:</strong> 24×6 for AMC/critical issues</li>
+          </ul>
+          <div class="d-flex gap-3 mt-2">
+            <a class="text-decoration-none" target="_blank" rel="noopener" href="https://www.linkedin.com/company/ridtech-solution"><i class="bi bi-linkedin fs-4"></i></a>
+            <a class="text-decoration-none" href="mailto:sales@ridtechsolution.com"><i class="bi bi-envelope-open fs-4"></i></a>
+            <a class="text-decoration-none" href="tel:+919890123998"><i class="bi bi-telephone fs-4"></i></a>
           </div>
         </div>
       </div>
