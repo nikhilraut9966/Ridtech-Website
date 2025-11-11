@@ -55,11 +55,11 @@
 }
 .contact-card {
   background: #fff;
-  border: 2px solid transparent;
-  border-radius: 16px;
-  padding: 22px;
-  box-shadow: 0 6px 18px rgba(0,0,0,.06);
-  transition: all .25s;
+  border: 1.8px solid transparent; /* thinner border */
+  border-radius: 14px;
+  padding: 18px 20px; /* slightly reduced padding */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: all 0.25s ease;
   height: 100%;
   background-image: linear-gradient(#fff, #fff),
                     linear-gradient(135deg, #ff6b00, #c6d319);
@@ -68,9 +68,9 @@
 }
 
 .contact-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 26px rgba(0,0,0,.1);
+  transform: translateY(-3px);
   border-color: #ff6b00;
+  box-shadow: 0 8px 20px rgba(255, 107, 0, 0.2);
 }
 
 /* ---------- FORM ---------- */
